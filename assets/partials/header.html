@@ -1,0 +1,36 @@
+<!-- header.html — injetado por includes.js em todas as páginas.
+     Caminhos root-relative (/) para funcionar em qualquer profundidade. -->
+<header class="cabecalho">
+  <div class="container cabecalho__inner">
+    <a class="cabecalho__logo" href="/">
+      <!-- logo branca recebida (CONTEXT.md §6.1). Converter PNG → SVG quando possível. -->
+      <img src="/assets/img/logo/Logo-branca-Agricampo.png" alt="Agricampo Jr." width="160" height="40"
+           onerror="this.style.display='none'">
+      <span>Agricampo Jr.</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-principal"
+            aria-label="Abrir menu">
+      <span class="nav-toggle__barra"></span>
+    </button>
+
+    <nav class="nav-principal" id="nav-principal" aria-label="Navegação principal">
+      <ul class="nav-principal__lista">
+        <li><a class="nav-principal__link" href="/">Início</a></li>
+        <li class="nav-principal__item--tem-sub">
+          <a class="nav-principal__link" href="/sobre/historia.html">Sobre</a>
+          <div class="nav-principal__sub">
+            <a href="/sobre/historia.html">Nossa História</a>
+            <a href="/sobre/historia.html#sede">Nossa Sede</a>
+            <a href="/sobre/equipe.html">Equipe</a>
+            <a href="/contato.html#como-chegar">Como Chegar</a>
+          </div>
+        </li>
+        <li><a class="nav-principal__link" href="/servicos.html">Serviços</a></li>
+        <li><a class="nav-principal__link" href="/cases.html">Depoimentos</a></li>
+        <li><a class="nav-principal__link" href="/contato.html">Contato</a></li>
+      </ul>
+      <a class="btn btn--acento" href="/contato.html">Fale com um consultor</a>
+    </nav>
+  </div>
+</header>

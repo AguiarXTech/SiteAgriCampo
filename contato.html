@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato — Agricampo Jr.</title>
+  <meta name="description" content="Fale com a Agricampo Jr. Preencha o formulário ou chame no WhatsApp para pedir um diagnóstico da sua propriedade.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script type="module" src="/assets/js/main.js"></script>
+</head>
+<body>
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div data-include="/assets/partials/header.html"></div>
+
+  <main id="conteudo">
+
+    <!-- FORMULÁRIO — campos exatos da spec CONTEXT.md §7 (fundo escuro, padrão AgroPlan) -->
+    <section class="secao secao--escura">
+      <div class="container">
+        <div class="grid grid--2" style="gap:3rem;align-items:start">
+          <div>
+            <span class="rotulo-secao">Fale com a gente</span>
+            <h1 class="secao__titulo--caps">Peça um diagnóstico da sua propriedade</h1>
+            <p style="margin-top:1rem;color:var(--texto-suave-sobre-escuro)">
+              Preencha os campos ao lado ou chame no WhatsApp. Retornamos com os próximos passos.
+            </p>
+            <ul style="margin-top:1.5rem;color:var(--texto-suave-sobre-escuro)">
+              <li>WhatsApp: <strong>PENDENTE</strong></li>
+              <li>E-mail: <strong>PENDENTE</strong></li>
+              <li>Endereço: <strong>PENDENTE</strong></li>
+            </ul>
+          </div>
+
+          <form class="formulario" data-formulario="contato" novalidate>
+            <p class="form-aviso" role="status" hidden></p>
+
+            <div class="campo">
+              <label class="campo__label" for="nome">Nome completo</label>
+              <input class="campo__controle" id="nome" name="nome" type="text" required autocomplete="name">
+              <span class="campo__erro" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <label class="campo__label" for="contato">Seu melhor contato</label>
+              <input class="campo__controle" id="contato" name="contato" type="tel"
+                     placeholder="(DDD) X XXXX-XXXX" required autocomplete="tel">
+              <span class="campo__erro" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <label class="campo__label" for="email">E-mail</label>
+              <input class="campo__controle" id="email" name="email" type="email" required autocomplete="email">
+              <span class="campo__erro" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <label class="campo__label" for="localizacao">Localização da propriedade (cidade e estado)</label>
+              <input class="campo__controle" id="localizacao" name="localizacao" type="text" required>
+              <span class="campo__erro" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <label class="campo__label" for="atividade">Qual é a sua atividade principal</label>
+              <select class="campo__controle" id="atividade" name="atividade" required>
+                <option value="">Selecione…</option>
+                <option>Milho</option>
+                <option>Feijão</option>
+                <option>Cafeicultura</option>
+                <option>Cana</option>
+                <option>Pecuária</option>
+                <option>Silagem</option>
+                <option>Pastagem</option>
+                <option>Horticultura</option>
+                <option>Fruticultura</option>
+                <option>Outros</option>
+              </select>
+              <span class="campo__erro" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <label class="campo__label" for="area">Tamanho aproximado da área</label>
+              <input class="campo__controle" id="area" name="area" type="text" placeholder="ex: 12 hectares" required>
+              <span class="campo__erro" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <label class="campo__label" for="mensagem">Como podemos ajudar</label>
+              <textarea class="campo__controle" id="mensagem" name="mensagem" required></textarea>
+              <span class="campo__erro" aria-live="polite"></span>
+            </div>
+
+            <button class="btn btn--acento" type="submit">Enviar contato</button>
+            <!-- ⚠️ envio ainda não conectado — serviço (Formspree/EmailJS) pendente (CONTEXT.md §10) -->
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO CHEGAR — mapa + vídeo do trajeto (CONTEXT.md §6.6 / §6.8) -->
+    <section class="secao secao--clara" id="como-chegar">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <span class="rotulo-secao">Visita</span>
+          <h2 class="secao__titulo--caps">Como chegar</h2>
+        </div>
+
+        <div class="grid grid--2" style="gap:3rem;align-items:start">
+          <div>
+            <p class="medida-leitura">
+              PENDENTE — endereço completo da sede e orientações de acesso (CONTEXT.md §6.5 / §6.6).
+            </p>
+            <div class="mapa-mg" style="margin-top:1.5rem">
+              <svg class="mapa-mg__svg" viewBox="0 0 400 320" role="img"
+                   aria-label="Mapa de Minas Gerais com a localização de São João Evangelista">
+                <rect x="8" y="8" width="384" height="304" rx="16" fill="currentColor" opacity="0.12"/>
+                <text x="200" y="165" text-anchor="middle" font-size="13" fill="#1b4d3e" opacity="0.6">
+                  contorno de MG (SVG pendente)
+                </text>
+              </svg>
+              <span class="mapa-mg__pin" style="top:34%;left:72%"></span>
+              <span class="mapa-mg__rotulo" style="top:38%;left:66%">São João Evangelista</span>
+            </div>
+          </div>
+
+          <figure>
+            <!-- Vídeo do trajeto: embutir do YouTube/Vimeo (CONTEXT.md §6.8) — PENDENTE de produção -->
+            <div class="card" style="display:grid;place-items:center;aspect-ratio:16/9;text-align:center">
+              <p class="card__texto">Vídeo do trajeto até a sede — PENDENTE de produção.<br>
+                Embutir via <code>&lt;iframe&gt;</code> do YouTube (não listado) ou Vimeo.</p>
+            </div>
+            <figcaption class="membro__cargo" style="margin-top:.75rem">
+              Um "manual de chegada" em vídeo para quem for visitar.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-include="/assets/partials/footer.html"></div>
+</body>
+</html>

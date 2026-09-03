@@ -1,0 +1,125 @@
+/* ==========================================================================
+   variables.css — DESIGN TOKENS do site da Agricampo Jr.
+   --------------------------------------------------------------------------
+   Fonte única de verdade para cor, tipografia, espaçamento, raio e sombra.
+   Nenhum outro arquivo deve cravar hex — todos consomem daqui.
+
+   Direção de design aprovada pela cliente (CONTEXT.md §5): linha AgroPlan-UFV
+   — verde-escuro institucional dominante alternando com branco, cards que
+   invertem de cor conforme o fundo, headings em CAIXA ALTA, foto real de campo.
+
+   ⚠️  PROVISÓRIO — as cores abaixo são estimativa visual a partir de prints do
+   AgroPlan-UFV e do Aegro (CONTEXT.md §5, item pendente §10). Confirmar o hex
+   exato via DevTools/color picker no site de referência ANTES de considerar a
+   paleta travada. Não é pixel-perfect ainda.
+   ========================================================================== */
+
+:root {
+  /* --- Marca / verdes ---------------------------------------------------- */
+  --cor-primaria: #1b4d3e;          /* verde-escuro institucional (fundo dominante) */
+  --cor-primaria-escura: #143b30;   /* hover/pressionado sobre a primária */
+  --cor-primaria-clara: #24614f;    /* divisórias e realces sutis dentro do verde */
+  --cor-primaria-media: #2e7d4f;    /* verde médio p/ texto e números sobre branco */
+  --cor-acento: #1dbf73;            /* verde tech vibrante (ref. Aegro) — reservar p/ CTA de destaque */
+  --cor-acento-escura: #17a262;
+
+  /* --- Neutros --------------------------------------------------------------- */
+  --cor-branco: #ffffff;
+  --cor-creme: #f5f1e8;             /* bege terroso p/ um 3º fundo alternado, se necessário */
+  --cor-cinza-50: #f7f8f7;
+  --cor-cinza-100: #eceeec;
+  --cor-cinza-200: #dfe2df;
+  --cor-cinza-300: #c4c9c5;
+  --cor-cinza-texto: #6b7280;       /* corpo de texto secundário */
+  --cor-texto: #1a1a1a;             /* corpo de texto sobre fundo claro */
+  --cor-preto: #0f1512;
+
+  /* --- Papéis semânticos (o que o CSS deve referenciar no dia a dia) ------ */
+  --fundo-claro: var(--cor-branco);
+  --fundo-escuro: var(--cor-primaria);
+  --fundo-alt: var(--cor-cinza-50);
+
+  --texto-sobre-claro: var(--cor-texto);
+  --texto-suave-sobre-claro: var(--cor-cinza-texto);
+  --texto-sobre-escuro: var(--cor-branco);
+  --texto-suave-sobre-escuro: rgba(255, 255, 255, 0.78);
+
+  --titulo-sobre-claro: var(--cor-primaria);
+  --link-sobre-claro: var(--cor-primaria-media);
+
+  --borda-clara: var(--cor-cinza-200);
+  --borda-escura: rgba(255, 255, 255, 0.16);
+
+  /* estados de formulário / validação */
+  --cor-erro: #c0392b;
+  --cor-erro-fundo: #fdeceb;
+  --cor-sucesso: #1e7d4f;
+  --cor-sucesso-fundo: #e7f4ec;
+
+  /* --- Tipografia ---------------------------------------------------------- */
+  --fonte-titulo: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --fonte-corpo: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --peso-regular: 400;
+  --peso-medio: 500;
+  --peso-semibold: 600;
+  --peso-bold: 700;
+  --peso-black: 800;
+
+  /* escala de tamanho — fluida (min → max) via clamp */
+  --fs-xs: 0.75rem;      /* 12px — legendas, labels de card */
+  --fs-sm: 0.875rem;     /* 14px */
+  --fs-base: 1rem;       /* 16px — corpo */
+  --fs-md: 1.125rem;     /* 18px — subtítulos, lead */
+  --fs-lg: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);      /* h3 */
+  --fs-xl: clamp(1.6rem, 1.3rem + 1.5vw, 2.25rem);      /* h2 */
+  --fs-2xl: clamp(2.1rem, 1.6rem + 2.6vw, 3.5rem);      /* h1 / hero */
+  --fs-3xl: clamp(2.6rem, 1.8rem + 4vw, 4.5rem);        /* números de impacto */
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+
+  --tracking-caps: 0.06em;   /* espaçamento p/ headings em CAIXA ALTA */
+  --tracking-label: 0.12em;  /* labels pequenos tipo "GESTÃO RURAL" (ref. Aegro) */
+
+  /* --- Espaçamento (escala base 4px) ------------------------------------- */
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-5: 1.5rem;
+  --esp-6: 2rem;
+  --esp-7: 3rem;
+  --esp-8: 4rem;
+  --esp-9: 6rem;
+  --esp-10: 8rem;
+
+  --secao-py: clamp(3.5rem, 2.5rem + 5vw, 7rem);  /* respiro vertical padrão de seção */
+
+  /* --- Layout ------------------------------------------------------------ */
+  --largura-conteudo: 1200px;
+  --largura-texto: 68ch;        /* medida de leitura confortável */
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --altura-header: 76px;
+
+  /* --- Raio -------------------------------------------------------------- */
+  --raio-sm: 6px;
+  --raio-md: 12px;
+  --raio-lg: 20px;
+  --raio-pill: 999px;           /* botões pill — característica da ref. AgroPlan */
+
+  /* --- Sombra (uso comedido — a ref. quase não usa sombra pesada) -------- */
+  --sombra-sm: 0 1px 2px rgba(15, 21, 18, 0.06);
+  --sombra-md: 0 8px 24px rgba(15, 21, 18, 0.1);
+  --sombra-foco: 0 0 0 3px rgba(29, 191, 115, 0.45);
+
+  /* --- Movimento ------------------------------------------------------------ */
+  --transicao-rapida: 140ms ease;
+  --transicao-base: 240ms ease;
+
+  /* --- Camadas --------------------------------------------------------------- */
+  --z-header: 100;
+  --z-menu-mobile: 200;
+  --z-whatsapp: 150;
+}

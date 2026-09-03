@@ -1,0 +1,6 @@
+/* main.css — único arquivo que as páginas linkam.
+   A ordem importa: tokens → reset → base → componentes. */
+@import "./variables.css";
+@import "./reset.css";
+@import "./base.css";
+@import "./components.css";
