@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde-escuro:#0b500d; --verde-escuro-2:#083a09; --verde-clara:#3fa641; --verde-media:#0a8a00;
+    --acento:#00af02; --acento-escura:#059100; --branco:#ffffff; --cinza-50:#f7f8f7; --cinza-100:#eceeec; --cinza-200:#dfe2df;
+    --cinza-texto:#6b7280; --texto:#1a1a1a;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Poppins',system-ui,sans-serif;color:var(--texto);background:var(--branco);}
+  a{color:var(--verde-media);text-decoration:none;}
+  a:hover{color:var(--verde-escuro);}
+  h1,h2,h3,h4{font-family:'Baloo 2','Poppins',system-ui,sans-serif;margin:0;}
+  p{margin:0;}
+</style>
+</helmet>
+
+<div style="width:100%;background:#fff;">
+
+  <!-- HEADER -->
+  <header style="background:var(--verde-escuro);">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:88px;display:flex;align-items:center;justify-content:space-between;gap:32px;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span style="display:flex;align-items:center;background:#fff;padding:8px 14px;border-radius:12px;box-shadow:0 1px 2px rgba(0,0,0,.06);"><img src="agricampo-logo-colorida.png" alt="Agricampo Jr." style="height:32px;width:auto;display:block;"></span>
+      </div>
+      <nav style="display:flex;align-items:center;gap:34px;">
+        <span style="color:#fff;font-size:14px;font-weight:500;">Início</span>
+        <span style="display:flex;align-items:center;gap:4px;color:#fff;font-size:14px;font-weight:500;">Sobre
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+        </span>
+        <span style="color:#fff;font-size:14px;font-weight:500;">Serviços</span>
+        <span style="color:#fff;font-size:14px;font-weight:600;border-bottom:2px solid var(--acento);padding-bottom:4px;">Certificados</span>
+        <span style="color:#fff;font-size:14px;font-weight:500;">Depoimentos</span>
+        <span style="color:#fff;font-size:14px;font-weight:500;">Contato</span>
+        <span style="background:var(--acento);color:#0f1512;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:12px 24px;border-radius:999px;">Fale com gente</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- TÍTULO -->
+  <section style="padding:56px 40px 40px;background:#fff;">
+    <div style="max-width:1280px;margin:0 auto;">
+      <span style="display:block;color:var(--verde-media);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;">Reconhecimento</span>
+      <h1 style="font-size:36px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;color:var(--verde-escuro);">Certificados</h1>
+      <p style="font-size:14px;color:#57565f;margin-top:12px;max-width:60ch;">Página pedida pela cliente em 16/09/2026. Nenhum certificado enviado ainda — abaixo, a estrutura de exibição.</p>
+    </div>
+  </section>
+
+  <!-- GRID DE CERTIFICADOS -->
+  <section style="padding:0 40px 80px;background:#fff;">
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div style="background:#fff;border:1px solid var(--cinza-200);border-radius:12px;overflow:hidden;">
+        <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#dfe2df,#c4c9c5);display:flex;align-items:center;justify-content:center;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8a8d92" stroke-width="1.5"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"></path><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"></path></svg>
+        </div>
+        <div style="padding:20px;">
+          <p style="color:var(--verde-escuro);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Certificado — a definir</p>
+          <p style="color:#9ea0a6;font-size:13px;margin-top:8px;">Emissor e data a definir com a cliente.</p>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--cinza-200);border-radius:12px;overflow:hidden;">
+        <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#dfe2df,#c4c9c5);display:flex;align-items:center;justify-content:center;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8a8d92" stroke-width="1.5"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"></path><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"></path></svg>
+        </div>
+        <div style="padding:20px;">
+          <p style="color:var(--verde-escuro);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Certificado — a definir</p>
+          <p style="color:#9ea0a6;font-size:13px;margin-top:8px;">Emissor e data a definir com a cliente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer style="background:var(--verde-escuro-2);color:rgba(255,255,255,.78);padding:64px 40px 24px;">
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;">
+      <div>
+        <p style="color:#fff;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;">Agricampo Jr.</p>
+        <p style="font-size:14px;line-height:1.6;">Empresa Júnior de Agronomia<br>São João Evangelista - MG</p>
+      </div>
+      <div>
+        <p style="color:#fff;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;">Navegação</p>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:14px;">
+          <span>Início</span><span>Sobre</span><span>Equipe</span><span>Serviços</span><span>Certificados</span><span>Depoimentos</span><span>Contato</span>
+        </div>
+      </div>
+      <div>
+        <p style="color:#fff;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;">Contato</p>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:14px;">
+          <span>WhatsApp: <em style="color:rgba(255,255,255,.5);font-style:normal;">a definir</em></span>
+          <span>E-mail: <em style="color:rgba(255,255,255,.5);font-style:normal;">a definir</em></span>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1280px;margin:40px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.16);font-size:12px;color:rgba(255,255,255,.5);">
+      <span>© 2026 Agricampo Jr. Todos os direitos reservados.</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

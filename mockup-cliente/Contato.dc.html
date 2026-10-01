@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde-escuro:#0b500d; --verde-escuro-2:#083a09; --verde-clara:#3fa641; --verde-media:#0a8a00;
+    --acento:#00af02; --acento-escura:#059100; --branco:#ffffff; --cinza-50:#f7f8f7; --cinza-100:#eceeec; --cinza-200:#dfe2df;
+    --cinza-texto:#6b7280; --texto:#1a1a1a;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Poppins',system-ui,sans-serif;color:var(--texto);background:var(--branco);}
+  a{color:var(--verde-media);text-decoration:none;}
+  a:hover{color:var(--verde-escuro);}
+  h1,h2,h3,h4{font-family:'Baloo 2','Poppins',system-ui,sans-serif;margin:0;}
+  p{margin:0;}
+  label{display:block;font-size:13px;font-weight:500;color:#fff;margin-bottom:6px;}
+  .campo{margin-bottom:16px;}
+  .controle{width:100%;padding:12px 14px;background:#fff;color:var(--texto);border:1px solid rgba(255,255,255,.2);border-radius:6px;font-size:14px;font-family:'Poppins',system-ui,sans-serif;}
+</style>
+</helmet>
+
+<div style="width:100%;background:#fff;">
+
+  <!-- HEADER -->
+  <header style="background:var(--verde-escuro);">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;height:88px;display:flex;align-items:center;justify-content:space-between;gap:32px;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span style="display:flex;align-items:center;background:#fff;padding:8px 14px;border-radius:12px;box-shadow:0 1px 2px rgba(0,0,0,.06);"><img src="agricampo-logo-colorida.png" alt="Agricampo Jr." style="height:32px;width:auto;display:block;"></span>
+      </div>
+      <nav style="display:flex;align-items:center;gap:34px;">
+        <span style="color:#fff;font-size:14px;font-weight:500;">Início</span>
+        <span style="display:flex;align-items:center;gap:4px;color:#fff;font-size:14px;font-weight:500;">Sobre
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </span>
+        <span style="color:#fff;font-size:14px;font-weight:500;">Serviços</span>
+        <span style="color:#fff;font-size:14px;font-weight:500;">Certificados</span>
+        <span style="color:#fff;font-size:14px;font-weight:500;">Depoimentos</span>
+        <span style="color:#fff;font-size:14px;font-weight:600;border-bottom:2px solid var(--acento);padding-bottom:4px;">Contato</span>
+        <span style="background:var(--acento);color:#0f1512;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:12px 24px;border-radius:999px;">Fale com gente</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- FORMULÁRIO -->
+  <section style="padding:72px 40px;background:var(--verde-escuro);">
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:start;">
+      <div>
+        <span style="display:block;color:var(--acento);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;">Fale com a gente</span>
+        <h1 style="color:#fff;font-size:32px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;line-height:1.2;">Peça um diagnóstico da sua propriedade</h1>
+        <p style="color:rgba(255,255,255,.75);font-size:14px;line-height:1.7;margin-top:16px;">Preencha o formulário ou chame no WhatsApp. Retornamos com os próximos passos.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:24px;font-size:14px;color:rgba(255,255,255,.85);">
+          <span>WhatsApp: <em style="color:rgba(255,255,255,.5);font-style:normal;">a definir</em></span>
+          <span>E-mail: <em style="color:rgba(255,255,255,.5);font-style:normal;">a definir</em></span>
+          <span>Endereço: <em style="color:rgba(255,255,255,.5);font-style:normal;">a definir</em></span>
+        </div>
+        <div style="margin-top:28px;aspect-ratio:16/10;border-radius:12px;background:var(--verde-escuro-2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span style="color:rgba(255,255,255,.5);font-size:12px;">Foto da equipe — placeholder</span>
+        </div>
+      </div>
+
+      <form style="background:var(--verde-escuro-2);border-radius:12px;padding:36px;">
+        <div class="campo"><label>Nome completo</label><div class="controle" style="color:#9ea0a6;">nome completo</div></div>
+        <div class="campo"><label>Seu melhor contato</label><div class="controle" style="color:#9ea0a6;">(DDD) X XXXX-XXXX</div></div>
+        <div class="campo"><label>E-mail</label><div class="controle" style="color:#9ea0a6;">seu@email.com</div></div>
+        <div class="campo"><label>Localização da propriedade (cidade e estado)</label><div class="controle" style="color:#9ea0a6;">cidade, estado</div></div>
+        <div class="campo">
+          <label>Qual é a sua atividade principal</label>
+          <div class="controle" style="display:flex;justify-content:space-between;align-items:center;color:#9ea0a6;">
+            Selecione…
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ea0a6" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="campo"><label>Tamanho aproximado da área</label><div class="controle" style="color:#9ea0a6;">ex: 12 hectares</div></div>
+        <div class="campo"><label>Como podemos ajudar</label><div class="controle" style="min-height:70px;color:#9ea0a6;">conte um pouco mais…</div></div>
+        <span style="display:inline-block;margin-top:6px;background:var(--acento);color:#0f1512;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:14px 28px;border-radius:999px;">Enviar contato</span>
+      </form>
+    </div>
+  </section>
+
+  <!-- COMO CHEGAR -->
+  <section style="padding:80px 40px;background:#fff;">
+    <div style="max-width:1280px;margin:0 auto;">
+      <span style="display:block;color:var(--verde-media);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;">Visita</span>
+      <h2 style="font-size:28px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:var(--verde-escuro);">Como chegar</h2>
+
+      <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+        <div>
+          <p style="font-size:14px;color:#57565f;font-style:italic;">[Endereço completo da sede e orientações de acesso — a definir]</p>
+          <div style="position:relative;background:var(--cinza-50);border-radius:12px;padding:20px;margin-top:20px;">
+            <svg viewBox="0 0 300 260" width="100%" height="auto" style="display:block;">
+              <path d="M60,10 L170,6 L225,35 L262,88 L248,148 L268,188 L228,232 L148,252 L88,230 L42,198 L18,150 L8,90 L30,48 Z"
+                    fill="var(--verde-clara)" opacity="0.18" stroke="var(--verde-media)" stroke-width="2"/>
+              <circle cx="196" cy="118" r="7" fill="var(--acento)" stroke="#fff" stroke-width="3"/>
+            </svg>
+            <div style="position:absolute;left:64%;top:44%;background:#fff;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;color:var(--verde-escuro);box-shadow:0 2px 8px rgba(0,0,0,.12);white-space:nowrap;">São João Evangelista</div>
+          </div>
+        </div>
+
+        <div>
+          <div style="aspect-ratio:16/9;background:var(--cinza-50);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9ea0a6" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4V8z" fill="#9ea0a6" stroke="none"/></svg>
+            <p style="color:#9ea0a6;font-size:13px;text-align:center;max-width:32ch;">Vídeo do trajeto até a sede — produção pendente</p>
+          </div>
+          <p style="font-size:12px;color:#9ea0a6;margin-top:12px;">Um "manual de chegada" em vídeo para quem for visitar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer style="background:var(--verde-escuro-2);color:rgba(255,255,255,.78);padding:64px 40px 24px;">
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;">
+      <div>
+        <p style="color:#fff;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;">Agricampo Jr.</p>
+        <p style="font-size:14px;line-height:1.6;">Empresa Júnior de Agronomia<br>São João Evangelista - MG</p>
+      </div>
+      <div>
+        <p style="color:#fff;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;">Navegação</p>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:14px;">
+          <span>Início</span><span>Sobre</span><span>Equipe</span><span>Serviços</span><span>Certificados</span><span>Depoimentos</span><span>Contato</span>
+        </div>
+      </div>
+      <div>
+        <p style="color:#fff;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;">Contato</p>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:14px;">
+          <span>WhatsApp: <em style="color:rgba(255,255,255,.5);font-style:normal;">a definir</em></span>
+          <span>E-mail: <em style="color:rgba(255,255,255,.5);font-style:normal;">a definir</em></span>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1280px;margin:40px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.16);font-size:12px;color:rgba(255,255,255,.5);">
+      <span>© 2026 Agricampo Jr. Todos os direitos reservados.</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

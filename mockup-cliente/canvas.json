@@ -1,0 +1,20 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "title": "Início", "x": 0, "y": 0, "w": 1440, "h": 3560 },
+    { "file": "SobreHistoria.dc.html", "title": "Sobre — Nossa História", "x": 1560, "y": 0, "w": 1440, "h": 2080 },
+    { "file": "SobreEquipe.dc.html", "title": "Sobre — Equipe", "x": 3120, "y": 0, "w": 1440, "h": 3960 },
+    { "file": "Servicos.dc.html", "title": "Serviços", "x": 4680, "y": 0, "w": 1440, "h": 1700 },
+    { "file": "Certificados.dc.html", "title": "Certificados", "x": 6240, "y": 0, "w": 1440, "h": 1300 },
+    { "file": "Contato.dc.html", "title": "Contato", "x": 7800, "y": 0, "w": 1440, "h": 2300 }
+  ],
+  "annotations": [
+    {
+      "id": "brief",
+      "x": 0,
+      "y": -170,
+      "w": 760,
+      "text": "Mockup de direção visual — Site Agricampo Jr.\nEstrutura da referência AgroPlan-UFV, recolorida com a marca real (logo recebida em 16/09/2026). Fundo escuro em verde #0B500D (matiz da logo), acento no verde exato da logo #00AF02, logo colorida no header.\nTextos e fotos em cinza/itálico são placeholders — o conteúdo real entra depois da aprovação."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}
