@@ -4,37 +4,39 @@
  * CAMADA DE CONTEÚDO — fonte local, trocável. Formato espelha a collection
  * `services` do Payload/Mutare (nome, descricao, imagem, ordem).
  *
- * ⚠️ TUDO PENDENTE (CONTEXT.md §10): a lista real de serviços, as descrições e
- * o critério de organização (por público-alvo OU por área técnica) ainda não
- * foram definidos pela cliente — essa decisão muda a arquitetura do menu.
- * Os itens abaixo são PLACEHOLDERS só para montar o layout da Fase 1.
+ * Lista real recebida da cliente em 16/09/2026 (3 itens). Ela pediu para
+ * "adicionar o restante dos serviços" — ou seja, esta lista está incompleta
+ * de propósito; os demais itens ainda não foram enviados. Descrição,
+ * público-alvo e critério de organização (por público-alvo OU por área
+ * técnica) continuam PENDENTES (CONTEXT.md §10).
  */
 
 export const servicos = [
   {
-    nome: "PENDENTE — Serviço 1",
+    nome: "Regulamentação de documentos",
     descricao: "PENDENTE — descrição curta do serviço.",
     publicoAlvo: "PENDENTE",
-    imagem: "assets/img/servicos/servico-1.jpg",
-    icone: "assets/img/servicos/servico-1.svg",
+    imagem: "assets/img/servicos/regulamentacao-documentos.jpg",
+    icone: "assets/img/servicos/regulamentacao-documentos.svg",
     ordem: 1,
   },
   {
-    nome: "PENDENTE — Serviço 2",
+    nome: "Análise de solo",
     descricao: "PENDENTE — descrição curta do serviço.",
     publicoAlvo: "PENDENTE",
-    imagem: "assets/img/servicos/servico-2.jpg",
-    icone: "assets/img/servicos/servico-2.svg",
+    imagem: "assets/img/servicos/analise-de-solo.jpg",
+    icone: "assets/img/servicos/analise-de-solo.svg",
     ordem: 2,
   },
   {
-    nome: "PENDENTE — Serviço 3",
+    nome: "Marketing rural",
     descricao: "PENDENTE — descrição curta do serviço.",
     publicoAlvo: "PENDENTE",
-    imagem: "assets/img/servicos/servico-3.jpg",
-    icone: "assets/img/servicos/servico-3.svg",
+    imagem: "assets/img/servicos/marketing-rural.jpg",
+    icone: "assets/img/servicos/marketing-rural.svg",
     ordem: 3,
   },
+  // PENDENTE — "o restante dos serviços" (pedido da cliente em 16/09/2026, itens ainda não enviados)
 ];
 
 /**

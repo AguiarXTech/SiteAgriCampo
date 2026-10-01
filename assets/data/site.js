@@ -27,17 +27,32 @@ export const site = {
     "PENDENTE — parágrafo 3.",
   ],
 
+  // Missão ainda PENDENTE — a cliente enviou Visão e Valores (16/09/2026), missão não veio junto.
   missao: "PENDENTE — missão da empresa júnior.",
-  visao: "PENDENTE — visão.",
-  valores: ["PENDENTE — valor 1", "PENDENTE — valor 2", "PENDENTE — valor 3"],
+  visao:
+    "A Agricampo tem como visão desenvolver os discentes e produtores assistidos, com o intuito de promover o crescimento socioeconômico e tecnológico, realizando serviços e orientações, com preços acessíveis, mantendo o profissionalismo e qualidade dos serviços prestados.",
+  valores: [
+    "Compromisso",
+    "Resiliência",
+    "Ética",
+    "Equidade",
+    "Autenticidade",
+    "Conhecimento",
+    "Respeito",
+  ],
 
-  // Hero da home
+  // Hero da home.
+  // ⚠️ Hoje este objeto é vestigial: index.html tem o texto do hero direto no
+  // HTML (nunca foi ligado a um hero-render.js). Mantido em sincronia mesmo
+  // assim, pra não virar fonte de verdade divergente. Linguagem simples,
+  // pedido da cliente em 29/09/2026 — público é produtor rural, evitar termo
+  // técnico/formal (CONTEXT.md §10).
   hero: {
-    titulo: "Consultoria em agronomia para transformar a produtividade da sua propriedade",
+    titulo: "Ajuda de verdade pra sua lavoura ou criação produzir mais",
     subtitulo:
-      "Empresa Júnior de Agronomia em São João Evangelista - MG. Diagnóstico técnico, planejamento e acompanhamento a preços acessíveis.",
-    ctaPrimario: { rotulo: "Fale com um consultor", href: "/contato.html" },
-    ctaSecundario: { rotulo: "Conheça os serviços", href: "/servicos.html" },
+      "Somos estudantes de Agronomia de São João Evangelista - MG. A gente vai até sua propriedade, vê o que precisa e ajuda a resolver, com preço justo.",
+    ctaPrimario: { rotulo: "Fale com gente", href: "/contato.html" },
+    ctaSecundario: { rotulo: "Ver o que a gente faz", href: "/servicos.html" },
     // imagem de fundo — foto real de campo (CONTEXT.md §5). PENDENTE de asset.
     imagem: "assets/img/hero-campo.jpg",
   },

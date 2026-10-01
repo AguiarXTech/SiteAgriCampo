@@ -3,10 +3,12 @@
 <header class="cabecalho">
   <div class="container cabecalho__inner">
     <a class="cabecalho__logo" href="/">
-      <!-- logo branca recebida (CONTEXT.md §6.1). Converter PNG → SVG quando possível. -->
-      <img src="/assets/img/logo/Logo-branca-Agricampo.png" alt="Agricampo Jr." width="160" height="40"
-           onerror="this.style.display='none'">
-      <span>Agricampo Jr.</span>
+      <!-- logo colorida real (pedido da cliente, 18/09/2026). A logo tem preto
+           e verde, então precisa de uma placa branca por baixo para não se
+           misturar ao verde do header — senão a parte verde da logo some. -->
+      <span class="cabecalho__logo-placa">
+        <img src="/assets/img/logo/agricampo-logo-colorida.png" alt="Agricampo Jr." width="52" height="32">
+      </span>
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-principal"
@@ -27,10 +29,11 @@
           </div>
         </li>
         <li><a class="nav-principal__link" href="/servicos.html">Serviços</a></li>
+        <li><a class="nav-principal__link" href="/certificados.html">Certificados</a></li>
         <li><a class="nav-principal__link" href="/cases.html">Depoimentos</a></li>
         <li><a class="nav-principal__link" href="/contato.html">Contato</a></li>
       </ul>
-      <a class="btn btn--acento" href="/contato.html">Fale com um consultor</a>
+      <a class="btn btn--acento" href="/contato.html">Fale com gente</a>
     </nav>
   </div>
 </header>

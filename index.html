@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agricampo Jr. — Consultoria em Agronomia | São João Evangelista - MG</title>
-  <meta name="description" content="Empresa Júnior de Agronomia em São João Evangelista - MG. Consultoria técnica, diagnóstico e planejamento para produtores rurais, cooperativas e agroindústrias.">
+  <meta name="description" content="Empresa Júnior de Agronomia em São João Evangelista - MG. A gente ajuda produtor rural, cooperativa e empresa do agro a produzir mais, com preço justo.">
+  <link rel="icon" type="image/png" href="/assets/img/logo/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/assets/img/logo/favicon-16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/assets/img/logo/favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
   <script type="module" src="/assets/js/main.js"></script>
 </head>
@@ -24,14 +27,14 @@
            onerror="this.remove()">
       <div class="hero__overlay"></div>
       <div class="container hero__conteudo">
-        <h1 class="hero__titulo">Consultoria em agronomia para transformar a produtividade da sua propriedade</h1>
-        <p class="hero__subtitulo">
-          Empresa Júnior de Agronomia em São João Evangelista - MG. Diagnóstico técnico,
-          planejamento e acompanhamento a preços acessíveis.
+        <h1 class="hero__titulo">Ajuda de verdade pra sua lavoura ou criação produzir mais</h1>
+        <p class="hero__subtitulo moldura-colchete">
+          Somos estudantes de Agronomia de São João Evangelista - MG. A gente vai até sua
+          propriedade, vê o que precisa e ajuda a resolver, com <span style="text-decoration:underline;text-decoration-color:var(--cor-acento);text-decoration-thickness:2px;text-underline-offset:3px">preço justo</span>.
         </p>
         <div class="hero__acoes">
-          <a class="btn btn--claro" href="/contato.html">Fale com um consultor</a>
-          <a class="btn btn--contorno" href="/servicos.html">Conheça os serviços</a>
+          <a class="btn btn--claro" href="/contato.html">Fale com gente</a>
+          <a class="btn btn--contorno" href="/servicos.html">Ver o que a gente faz</a>
         </div>
       </div>
     </section>
@@ -41,13 +44,12 @@
       <div class="container">
         <div class="secao__cabecalho">
           <span class="rotulo-secao">Quem somos</span>
-          <h2 class="secao__titulo--caps">Uma empresa júnior movida por quem vive o campo</h2>
+          <h2 class="secao__titulo--caps">Gente que entende de roça e gosta de ajudar</h2>
         </div>
         <p class="medida-leitura">
-          <!-- PENDENTE (CONTEXT.md §6.1) — história institucional -->
-          Texto institucional em elaboração. A Agricampo Jr. é a empresa júnior de Agronomia
-          de São João Evangelista - MG, formada por estudantes que prestam consultoria a
-          produtores rurais, cooperativas e agroindústrias.
+          <!-- história completa PENDENTE (CONTEXT.md §6.1) — este parágrafo curto já é texto final -->
+          A Agricampo Jr. é formada por estudantes de Agronomia de São João Evangelista - MG.
+          A gente ajuda produtor rural, cooperativa e empresa do agro a produzir mais e melhor.
         </p>
         <p style="margin-top:1.5rem">
           <a class="btn btn--contorno" href="/sobre/historia.html">Nossa história</a>
@@ -69,11 +71,11 @@
           </article>
           <article class="card">
             <h3 class="card__titulo">Visão</h3>
-            <p class="card__texto">PENDENTE — definir com a cliente.</p>
+            <p class="card__texto">A Agricampo tem como visão desenvolver os discentes e produtores assistidos, com o intuito de promover o crescimento socioeconômico e tecnológico, realizando serviços e orientações, com preços acessíveis, mantendo o profissionalismo e qualidade dos serviços prestados.</p>
           </article>
           <article class="card">
             <h3 class="card__titulo">Valores</h3>
-            <p class="card__texto">PENDENTE — definir com a cliente.</p>
+            <p class="card__texto">Compromisso · Resiliência · Ética · Equidade · Autenticidade · Conhecimento · Respeito</p>
           </article>
         </div>
       </div>
@@ -86,21 +88,8 @@
           <span class="rotulo-secao">Como ajudamos</span>
           <h2 class="secao__titulo--caps">Serviços</h2>
         </div>
-        <div class="grid grid--3" data-servicos-home>
-          <!-- placeholders (CONTEXT.md §6.3 — lista real pendente) -->
-          <article class="card-servico">
-            <div class="card-servico__foto"></div>
-            <div class="card-servico__corpo"><p class="card-servico__label">Serviço 1 (pendente)</p></div>
-          </article>
-          <article class="card-servico">
-            <div class="card-servico__foto"></div>
-            <div class="card-servico__corpo"><p class="card-servico__label">Serviço 2 (pendente)</p></div>
-          </article>
-          <article class="card-servico">
-            <div class="card-servico__foto"></div>
-            <div class="card-servico__corpo"><p class="card-servico__label">Serviço 3 (pendente)</p></div>
-          </article>
-        </div>
+        <!-- renderizado por assets/js/servicos-render.js a partir de assets/data/servicos.js -->
+        <div class="grid grid--3" data-servicos-home></div>
         <p style="margin-top:2rem">
           <a class="btn btn--primario" href="/servicos.html">Ver todos os serviços</a>
         </p>
@@ -112,11 +101,11 @@
     <!-- CTA de diagnóstico — substitui números de resultado enquanto não há cases (§6.4) -->
     <section class="secao secao--escura">
       <div class="container texto-centro">
-        <h2 class="secao__titulo--caps">Peça um diagnóstico da sua propriedade</h2>
+        <h2 class="secao__titulo--caps">Quer saber o que sua propriedade precisa?</h2>
         <p class="medida-leitura" style="margin:1rem auto 2rem">
-          Conte pra gente o momento da sua lavoura ou criação. Retornamos com os próximos passos.
+          Conta pra gente como está sua lavoura ou criação. A gente te fala o que fazer.
         </p>
-        <a class="btn btn--acento" href="/contato.html">Falar com a Agricampo</a>
+        <a class="btn btn--acento" href="/contato.html">Fale com a gente</a>
       </div>
     </section>
 

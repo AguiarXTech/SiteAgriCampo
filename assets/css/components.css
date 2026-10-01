@@ -102,7 +102,16 @@
   letter-spacing: var(--tracking-caps);
 }
 
-.cabecalho__logo img { height: 40px; width: auto; }
+.cabecalho__logo img { height: 32px; width: auto; display: block; }
+
+.cabecalho__logo-placa {
+  display: flex;
+  align-items: center;
+  background-color: var(--cor-branco);
+  padding: 8px 14px;
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-sm);
+}
 
 .nav-principal { display: flex; align-items: center; gap: var(--esp-5); }
 
@@ -271,11 +280,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(
-    180deg,
-    rgba(20, 59, 48, 0.55) 0%,
-    rgba(20, 59, 48, 0.82) 100%
-  );
+  background: linear-gradient(180deg, var(--overlay-foto-1) 0%, var(--overlay-foto-2) 100%);
 }
 
 .hero__conteudo {
@@ -306,6 +311,31 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* --------------------------------------------------------------------------
+   Moldura de colchetes "[ ]" — motivo recorrente dos posts reais da empresa
+   (ver mockup-cliente/referencia/Elemento DSG.png: legenda e data emolduradas
+   assim). Usar em frases curtas de destaque, não em blocos longos de texto.
+   -------------------------------------------------------------------------- */
+
+.moldura-colchete {
+  position: relative;
+  display: inline-block;
+  padding-inline: var(--esp-4);
+}
+
+.moldura-colchete::before,
+.moldura-colchete::after {
+  content: "";
+  position: absolute;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: 0.5em;
+  border: 3px solid var(--cor-acento);
+}
+
+.moldura-colchete::before { left: 0; border-right: none; }
+.moldura-colchete::after { right: 0; border-left: none; }
 
 /* --------------------------------------------------------------------------
    Card que inverte a cor conforme o fundo — principal recurso de hierarquia

@@ -16,7 +16,7 @@ export function hidratarSite() {
   const zap = document.querySelector("[data-whatsapp]");
   if (zap) {
     if (whatsapp) {
-      const msg = encodeURIComponent("Olá! Vim pelo site e gostaria de falar com a Agricampo Jr.");
+      const msg = encodeURIComponent("Oi! Vi o site de vocês e queria conversar.");
       zap.href = `https://wa.me/${whatsapp}?text=${msg}`;
     } else {
       zap.setAttribute("aria-disabled", "true");

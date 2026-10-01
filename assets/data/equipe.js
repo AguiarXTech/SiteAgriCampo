@@ -17,9 +17,17 @@
  * fotoFonte:
  *   - nome do arquivo original na pasta de materiais, quando existir
  *
- * ⚠️ 17 de 19 membros sem foto padronizada — maior gargalo de conteúdo (§6.2).
+ * ⚠️ 18 de 21 membros sem foto padronizada — maior gargalo de conteúdo (§6.2).
  * ⚠️ Mapeamento setor → cultura é SUGESTÃO — decisão final é da cliente (§6.2).
- * ⚠️ "felipe 1.heif" existe na pasta e não corresponde a ninguém do PDF (§6.2).
+ *
+ * Correções pedidas pela cliente em 16/09/2026:
+ *   - Rafaella Gama Marques: RH → Marketing
+ *   - Anabelly Cristina M. Silva e Luciene Rita Correia dos Santos: → RH
+ *   - Novos membros: Tais Eduarda (Marketing), Luís Felipe (Comercial)
+ *   - "felipe 1.heif" (arquivo sem correspondência, ver histórico) é o Luís Felipe.
+ *   Cargos dos 3 membros movidos de setor foram ajustados para nomear o setor novo
+ *   (ex: "Gerente de RH" → "Gerente de Marketing"), mantendo o nível hierárquico —
+ *   a cliente só pediu a troca de setor; confirmar se o cargo formal é outro.
  */
 
 /** Ordem de exibição dos setores + cultura sugerida (a validar com a cliente). */
@@ -68,26 +76,38 @@ export const equipe = [
     fotoStatus: "pendente",
   },
   {
-    nome: "Anabelly Cristina M. Silva",
-    cargo: "Gerente de Marketing",
-    formacao: "8º período",
-    setor: "marketing",
-    culturaTema: "Girassol",
-    ordem: 2,
-    foto: "assets/img/equipe/anabelly-silva.jpg",
-    fotoStatus: "disponivel",
-    fotoFonte: "anabelly 1.heif",
-  },
-  {
     nome: "Caroline Gomes dos Santos",
     cargo: "Gerente de Marketing",
     formacao: "Eng. Agronômica · 9º período · Maratona FAEMG Jovem 2026 · AutoCAD, Google Earth, QGIS",
     setor: "marketing",
     culturaTema: "Girassol",
-    ordem: 3,
+    ordem: 2,
     foto: "assets/img/equipe/caroline-santos.jpg",
     fotoStatus: "disponivel",
     fotoFonte: "caroline 1.heif",
+  },
+  {
+    // movida de RH → Marketing (pedido da cliente, 16/09/2026). Cargo ajustado
+    // de "Gerente de RH" para "Gerente de Marketing" — confirmar com a cliente.
+    nome: "Rafaella Gama Marques",
+    cargo: "Gerente de Marketing",
+    formacao: "6º período · inglês básico · Excel",
+    setor: "marketing",
+    culturaTema: "Girassol",
+    ordem: 3,
+    foto: "assets/img/equipe/rafaella-marques.jpg",
+    fotoStatus: "pendente",
+  },
+  {
+    // nova integrante (pedido da cliente, 16/09/2026) — cargo e formação a confirmar.
+    nome: "Tais Eduarda",
+    cargo: "Membro",
+    formacao: "PENDENTE — cargo, formação e período a confirmar",
+    setor: "marketing",
+    culturaTema: "Girassol",
+    ordem: 4,
+    foto: "assets/img/equipe/tais-eduarda.jpg",
+    fotoStatus: "pendente",
   },
 
   // --- Comercial ---------------------------------------------------------
@@ -111,6 +131,19 @@ export const equipe = [
     ordem: 2,
     foto: "assets/img/equipe/nayara-santos.jpg",
     fotoStatus: "pendente",
+  },
+  {
+    // novo integrante (pedido da cliente, 16/09/2026) — resolve a foto "felipe 1.heif"
+    // que estava sem correspondência no PDF de equipe original.
+    nome: "Luís Felipe",
+    cargo: "Membro",
+    formacao: "PENDENTE — cargo, formação e período a confirmar",
+    setor: "comercial",
+    culturaTema: "Soja",
+    ordem: 3,
+    foto: "assets/img/equipe/luis-felipe.jpg",
+    fotoStatus: "disponivel",
+    fotoFonte: "felipe 1.heif",
   },
 
   // --- Projetos --------------------------------------------------------
@@ -213,13 +246,27 @@ export const equipe = [
     fotoFonte: "beatriz 1 .heif",
   },
   {
-    nome: "Rafaella Gama Marques",
+    // movida de Marketing → RH (pedido da cliente, 16/09/2026). Cargo ajustado
+    // de "Gerente de Marketing" para "Gerente de RH" — confirmar com a cliente.
+    nome: "Anabelly Cristina M. Silva",
     cargo: "Gerente de RH",
-    formacao: "6º período · inglês básico · Excel",
+    formacao: "8º período",
     setor: "rh",
     culturaTema: "Algodão",
     ordem: 2,
-    foto: "assets/img/equipe/rafaella-marques.jpg",
+    foto: "assets/img/equipe/anabelly-silva.jpg",
+    fotoStatus: "disponivel",
+    fotoFonte: "anabelly 1.heif",
+  },
+  {
+    // movida de "Membros" → RH (pedido da cliente, 16/09/2026).
+    nome: "Luciene Rita Correia dos Santos",
+    cargo: "Membro",
+    formacao: "8º período · Maratona FAEMG Jovem 2026",
+    setor: "rh",
+    culturaTema: "Algodão",
+    ordem: 3,
+    foto: "assets/img/equipe/luciene-santos.jpg",
     fotoStatus: "pendente",
   },
 
@@ -234,16 +281,6 @@ export const equipe = [
     foto: "assets/img/equipe/ronaldo-alves.jpg",
     fotoStatus: "disponivel",
     fotoFonte: "Ronaldo .heif",
-  },
-  {
-    nome: "Luciene Rita Correia dos Santos",
-    cargo: "Membro",
-    formacao: "8º período · Maratona FAEMG Jovem 2026",
-    setor: "membros",
-    culturaTema: "",
-    ordem: 2,
-    foto: "assets/img/equipe/luciene-santos.jpg",
-    fotoStatus: "pendente",
   },
 ];
 

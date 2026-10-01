@@ -10,6 +10,8 @@ import { iniciarNavMobile } from "./nav-mobile.js";
 import { iniciarValidacaoFormulario } from "./form-validation.js";
 import { iniciarCarrosselDepoimentos } from "./testimonials-carousel.js";
 import { renderizarEquipe } from "./equipe-render.js";
+import { renderizarServicos } from "./servicos-render.js";
+import { renderizarCertificados } from "./certificados-render.js";
 import { hidratarSite } from "./site-render.js";
 
 async function iniciar() {
@@ -21,6 +23,8 @@ async function iniciar() {
   iniciarValidacaoFormulario();
   iniciarCarrosselDepoimentos();
   renderizarEquipe();
+  renderizarServicos();
+  renderizarCertificados();
 
   // ano corrente no rodapé
   document.querySelectorAll("[data-ano]").forEach((el) => {
