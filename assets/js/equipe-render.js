@@ -26,7 +26,7 @@ function cardMembro(m) {
 
   const temFoto = m.fotoStatus === "disponivel";
   const foto = temFoto
-    ? `<img class="membro__foto" src="/${m.foto}" alt="Foto de ${m.nome}" loading="lazy" width="300" height="400">`
+    ? `<img class="membro__foto" src="${m.foto}" alt="Foto de ${m.nome}" loading="lazy" width="300" height="400">`
     : `<div class="membro__foto" data-placeholder aria-hidden="true">${iniciais(m.nome)}</div>`;
 
   el.innerHTML = `

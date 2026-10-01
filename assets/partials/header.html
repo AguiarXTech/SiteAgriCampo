@@ -1,13 +1,16 @@
 <!-- header.html — injetado por includes.js em todas as páginas.
-     Caminhos root-relative (/) para funcionar em qualquer profundidade. -->
+     Caminhos SEM barra inicial (ex: "servicos.html", não "/servicos.html") —
+     cada página define <base href="./"> (raiz) ou <base href="../"> (sobre/),
+     e é essa tag que resolve o caminho certo pra onde a página realmente está.
+     Sem <base>, este mesmo header.html quebraria ao ser injetado em /sobre/. -->
 <header class="cabecalho">
   <div class="container cabecalho__inner">
-    <a class="cabecalho__logo" href="/">
+    <a class="cabecalho__logo" href=".">
       <!-- logo colorida real (pedido da cliente, 18/09/2026). A logo tem preto
            e verde, então precisa de uma placa branca por baixo para não se
            misturar ao verde do header — senão a parte verde da logo some. -->
       <span class="cabecalho__logo-placa">
-        <img src="/assets/img/logo/agricampo-logo-colorida.png" alt="Agricampo Jr." width="52" height="32">
+        <img src="assets/img/logo/agricampo-logo-colorida.png" alt="Agricampo Jr." width="52" height="32">
       </span>
     </a>
 
@@ -18,22 +21,22 @@
 
     <nav class="nav-principal" id="nav-principal" aria-label="Navegação principal">
       <ul class="nav-principal__lista">
-        <li><a class="nav-principal__link" href="/">Início</a></li>
+        <li><a class="nav-principal__link" href=".">Início</a></li>
         <li class="nav-principal__item--tem-sub">
-          <a class="nav-principal__link" href="/sobre/historia.html">Sobre</a>
+          <a class="nav-principal__link" href="sobre/historia.html">Sobre</a>
           <div class="nav-principal__sub">
-            <a href="/sobre/historia.html">Nossa História</a>
-            <a href="/sobre/historia.html#sede">Nossa Sede</a>
-            <a href="/sobre/equipe.html">Equipe</a>
-            <a href="/contato.html#como-chegar">Como Chegar</a>
+            <a href="sobre/historia.html">Nossa História</a>
+            <a href="sobre/historia.html#sede">Nossa Sede</a>
+            <a href="sobre/equipe.html">Equipe</a>
+            <a href="contato.html#como-chegar">Como Chegar</a>
           </div>
         </li>
-        <li><a class="nav-principal__link" href="/servicos.html">Serviços</a></li>
-        <li><a class="nav-principal__link" href="/certificados.html">Certificados</a></li>
-        <li><a class="nav-principal__link" href="/cases.html">Depoimentos</a></li>
-        <li><a class="nav-principal__link" href="/contato.html">Contato</a></li>
+        <li><a class="nav-principal__link" href="servicos.html">Serviços</a></li>
+        <li><a class="nav-principal__link" href="certificados.html">Certificados</a></li>
+        <li><a class="nav-principal__link" href="cases.html">Depoimentos</a></li>
+        <li><a class="nav-principal__link" href="contato.html">Contato</a></li>
       </ul>
-      <a class="btn btn--acento" href="/contato.html">Fale com gente</a>
+      <a class="btn btn--acento" href="contato.html">Fale com gente</a>
     </nav>
   </div>
 </header>

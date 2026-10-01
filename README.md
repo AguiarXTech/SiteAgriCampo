@@ -120,8 +120,10 @@ Não bloqueiam o desenvolvimento (há placeholders), mas precisam ser resolvidas
       restante da lista de serviços (3 confirmados), certificados, cases,
       número de WhatsApp, e-mail e endereço.
 - [ ] **Serviço de envio do formulário** — Formspree ou EmailJS (ver `form-validation.js`, `TODO envio`).
-- [ ] **Hospedagem** — Netlify / Vercel / GitHub Pages. Se for subpasta (GitHub Pages
-      *project site*), ajustar os caminhos root-relative (`/assets/...`) ou usar `<base>`.
+- [ ] **Hospedagem** — Netlify / Vercel / GitHub Pages, ainda não decidido. O site já
+      funciona em qualquer um: todo caminho é relativo a `<base>` (ver `includes.js`),
+      não à raiz do domínio — funciona tanto hospedado na raiz quanto numa subpasta
+      (ex: GitHub Pages *project site*, `usuario.github.io/repo/`).
 - [ ] **Mapeamento setor → cultura agrícola** — validar com a cliente (sugestão em `equipe.js`).
 - [ ] Esclarecer a foto `felipe 1.heif` (sem correspondência na lista da equipe).
 

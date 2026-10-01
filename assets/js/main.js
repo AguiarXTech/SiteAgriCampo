@@ -1,6 +1,7 @@
 /**
  * main.js — ponto de entrada de JS do site.
- * Carregado em toda página com <script type="module" src="/assets/js/main.js">.
+ * Carregado em toda página com <script type="module" src="assets/js/main.js">
+ * (caminho relativo a <base>, não à raiz — ver includes.js).
  *
  * Orquestra os módulos; cada um só age se encontrar sua marcação na página.
  */
