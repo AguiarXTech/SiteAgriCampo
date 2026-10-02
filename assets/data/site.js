@@ -16,19 +16,22 @@ export const site = {
   cidade: "São João Evangelista",
   estado: "MG",
   // vínculo acadêmico, fundação e federação — CONTEXT.md §6.1
-  instituicao: "PENDENTE — confirmar instituição de ensino vinculada",
+  instituicao: "IFMG – Campus São João Evangelista", // confirmado pela cliente 02/10/2026
   anoFundacao: "PENDENTE",
   federacao: "PENDENTE — Brasil Júnior / federação estadual",
 
   // Nossa História — CONTEXT.md §6.1 (2–3 parágrafos)
+  // O parágrafo curto abaixo (já usado em index.html "Quem somos") é texto oficial
+  // da cliente, recebido em 02/10/2026 — os 2-3 parágrafos completos seguem pendentes.
   historia: [
-    "PENDENTE — parágrafo 1 da história da Agricampo Jr.",
+    "A Agricampo Jr. é uma empresa júnior de Agronomia do IFMG – Campus São João Evangelista, formada por estudantes que unem conhecimento acadêmico e prática para desenvolver soluções para o setor agropecuário.",
     "PENDENTE — parágrafo 2.",
     "PENDENTE — parágrafo 3.",
   ],
 
-  // Missão ainda PENDENTE — a cliente enviou Visão e Valores (16/09/2026), missão não veio junto.
-  missao: "PENDENTE — missão da empresa júnior.",
+  // Missão, visão e valores — texto oficial da cliente (visão/valores 16/09/2026, missão 02/10/2026).
+  missao:
+    "Disponibilizar serviços e orientação tecnológica de qualidade, visando o desenvolvimento do produtor rural e de sua propriedade, em São João Evangelista e região, oportunizando o aperfeiçoamento prático dos alunos envolvidos.",
   visao:
     "A Agricampo tem como visão desenvolver os discentes e produtores assistidos, com o intuito de promover o crescimento socioeconômico e tecnológico, realizando serviços e orientações, com preços acessíveis, mantendo o profissionalismo e qualidade dos serviços prestados.",
   valores: [

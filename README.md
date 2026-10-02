@@ -116,14 +116,18 @@ Não bloqueiam o desenvolvimento (há placeholders), mas precisam ser resolvidas
     o campo `foto` em `assets/data/equipe.js` (ex: `equipe/marlon-pereira.jpg`)
   - `hero-campo.jpg`, `sede/aerea.jpg` (foto de drone — produção pendente)
   - `mapa/minas-gerais.svg` — contorno real de MG (hoje é um retângulo placeholder)
-- [ ] **Conteúdo** — história, missão (visão e valores recebidos em 16/09/2026),
-      restante da lista de serviços (3 confirmados), certificados, cases,
-      número de WhatsApp, e-mail e endereço.
+- [x] ~~Missão, visão e valores~~ — **recebidos da cliente** (visão/valores 16/09/2026,
+      missão 02/10/2026) e publicados em `assets/data/site.js` + `index.html`.
+- [x] ~~Instituição de ensino vinculada~~ — **confirmada 02/10/2026**: IFMG – Campus
+      São João Evangelista.
+- [ ] **Conteúdo** — ainda faltam: história completa (só o 1º parágrafo é texto oficial;
+      faltam mais 2), ano de fundação, federação, restante da lista de serviços
+      (3 confirmados), certificados, cases, número de WhatsApp, e-mail e endereço.
 - [ ] **Serviço de envio do formulário** — Formspree ou EmailJS (ver `form-validation.js`, `TODO envio`).
-- [ ] **Hospedagem** — Netlify / Vercel / GitHub Pages, ainda não decidido. O site já
-      funciona em qualquer um: todo caminho é relativo a `<base>` (ver `includes.js`),
-      não à raiz do domínio — funciona tanto hospedado na raiz quanto numa subpasta
-      (ex: GitHub Pages *project site*, `usuario.github.io/repo/`).
+- [x] ~~Hospedagem~~ — **no ar desde 01/10/2026** via GitHub Pages:
+      https://aguiarxtech.github.io/SiteAgriCampo/ (repositório público, branch `main`).
+      Todo caminho é relativo a `<base>` (ver `includes.js`), então funciona igual numa
+      subpasta ou, se um domínio próprio for comprado depois, na raiz.
 - [ ] **Mapeamento setor → cultura agrícola** — validar com a cliente (sugestão em `equipe.js`).
 - [ ] Esclarecer a foto `felipe 1.heif` (sem correspondência na lista da equipe).
 
