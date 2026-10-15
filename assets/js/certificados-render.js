@@ -1,21 +1,47 @@
 /**
  * certificados-render.js — monta o grid de certificados em certificados.html
  * a partir de assets/data/certificados.js.
+ *
+ * Dados viram texto, nunca HTML: só textContent/setAttribute, sem innerHTML.
  */
 
-import { certificados } from "../data/certificados.js?v=202610141957";
+import { certificados } from "../data/certificados.js?v=202610151544";
+
+function elemento(tag, classe, texto) {
+  const el = document.createElement(tag);
+  if (classe) el.className = classe;
+  if (texto != null) el.textContent = texto;
+  return el;
+}
 
 function cardCertificado(c) {
-  const el = document.createElement("article");
-  el.className = "card-servico";
-  const pendente = c.titulo.startsWith("PENDENTE");
-  el.innerHTML = `
-    <div class="card-servico__foto"></div>
-    <div class="card-servico__corpo">
-      <p class="card-servico__label">${c.titulo}</p>
-      ${pendente ? "" : `<p class="card__texto" style="margin-top:.5rem">${c.emissor}${c.dataEmissao ? " · " + c.dataEmissao : ""}</p>`}
-    </div>
-  `;
+  const el = elemento("article", "card-servico");
+  const titulo = c.titulo ?? "";
+  const pendente = titulo.startsWith("PENDENTE");
+
+  if (!pendente && c.imagem) {
+    const img = elemento("img", "card-servico__foto");
+    img.setAttribute("src", c.imagem);
+    img.setAttribute("alt", `Certificado: ${titulo}`);
+    img.setAttribute("loading", "lazy");
+    img.setAttribute("width", "800");
+    img.setAttribute("height", "600");
+    el.appendChild(img);
+  } else {
+    el.appendChild(elemento("div", "card-servico__foto"));
+  }
+
+  const corpo = elemento("div", "card-servico__corpo");
+  corpo.appendChild(elemento("p", "card-servico__label", titulo));
+  if (!pendente) {
+    const detalhe = [c.emissor, c.dataEmissao].filter(Boolean).join(" · ");
+    if (detalhe) {
+      const p = elemento("p", "card__texto", detalhe);
+      p.style.marginTop = ".5rem";
+      corpo.appendChild(p);
+    }
+  }
+  el.appendChild(corpo);
   return el;
 }
 

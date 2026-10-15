@@ -6,11 +6,17 @@
  * O formato espelha a collection `site-info` do Payload (um doc por tenant),
  * para que a migração futura seja direta. Ver README.md → "Camada de conteúdo".
  *
+ * Quando a plataforma publica (branch `publicado`), os campos institucionais e
+ * o contato vêm de conteudo-mutare.js (ver mutare.js). Campo vazio no painel
+ * cai no valor local abaixo. Hero, localização e números continuam locais.
+ *
  * Campos com "PENDENTE" são placeholders — não bloqueiam o código, mas
  * precisam ser preenchidos antes do site ir ao ar (CONTEXT.md §10).
  */
 
-export const site = {
+import { conteudo } from "./mutare.js?v=202610151544";
+
+const siteLocal = {
   nome: "Agricampo Jr.",
   nomeCompleto: "Agricampo Jr. — Empresa Júnior de Agronomia",
   cidade: "São João Evangelista",
@@ -97,5 +103,51 @@ export const site = {
     // { valor: "1995", legenda: "Fundação" },
   ],
 };
+
+/** Valor do painel quando preenchido; senão, o local. */
+function ou(valor, local) {
+  if (valor == null) return local;
+  if (typeof valor === "string" && valor.trim() === "") return local;
+  if (Array.isArray(valor) && valor.length === 0) return local;
+  return valor;
+}
+
+/** WhatsApp só com dígitos e DDI 55 — o painel pode mandar "(33) 99979-8615". */
+function normalizarWhatsapp(valor) {
+  const digitos = String(valor ?? "").replace(/\D/g, "");
+  if (!digitos) return "";
+  return digitos.length <= 11 ? `55${digitos}` : digitos;
+}
+
+function mesclarMutare(local, c) {
+  const s = c.site ?? {};
+  const contato = s.contato ?? {};
+  const redes = contato.redes ?? {};
+  return {
+    ...local,
+    nome: ou(c.empresa?.nome, local.nome),
+    instituicao: ou(s.instituicao, local.instituicao),
+    anoFundacao: ou(s.anoFundacao == null ? "" : String(s.anoFundacao), local.anoFundacao),
+    federacao: ou(s.federacao, local.federacao),
+    professorOrientador: ou(s.professorOrientador, local.professorOrientador),
+    historia: ou(s.descricao, local.historia),
+    missao: ou(s.missao, local.missao),
+    visao: ou(s.visao, local.visao),
+    valores: ou(s.valores, local.valores),
+    imagemCapa: s.imagemCapa ?? null,
+    contato: {
+      whatsapp: ou(normalizarWhatsapp(contato.whatsapp), local.contato.whatsapp),
+      email: ou(contato.email, local.contato.email),
+      endereco: ou(contato.endereco, local.contato.endereco),
+      redes: {
+        instagram: ou(redes.instagram, local.contato.redes.instagram),
+        linkedin: ou(redes.linkedin, local.contato.redes.linkedin),
+        facebook: ou(redes.facebook, local.contato.redes.facebook),
+      },
+    },
+  };
+}
+
+export const site = conteudo ? mesclarMutare(siteLocal, conteudo) : siteLocal;
 
 export default site;

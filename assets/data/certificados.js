@@ -7,9 +7,14 @@
  * Página pedida pela cliente em 16/09/2026 ("adicionar aba sobre certificados
  * da empresa"). Nenhum certificado foi enviado ainda — itens abaixo são
  * PLACEHOLDERS só para montar o layout.
+ *
+ * Quando a plataforma publica (branch `publicado`), a lista inteira vem de
+ * conteudo-mutare.js (ver mutare.js), na ordem do painel, e substitui esta.
  */
 
-export const certificados = [
+import { conteudo } from "./mutare.js?v=202610151544";
+
+const certificadosLocais = [
   {
     titulo: "PENDENTE — Certificado 1",
     emissor: "PENDENTE",
@@ -25,5 +30,15 @@ export const certificados = [
     ordem: 2,
   },
 ];
+
+export const certificados = conteudo
+  ? (conteudo.certificados ?? []).map((c, i) => ({
+      titulo: c.titulo ?? "",
+      emissor: c.emissor ?? "",
+      dataEmissao: c.dataEmissao ?? "",
+      imagem: c.imagem ?? null,
+      ordem: i + 1,
+    }))
+  : certificadosLocais;
 
 export default certificados;

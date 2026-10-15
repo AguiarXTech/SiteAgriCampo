@@ -4,8 +4,8 @@
  * CAMADA DE CONTEÚDO — fonte local, trocável. Formato espelha a collection
  * `services` do Payload/Mutare (nome, descricao, imagem, ordem).
  *
- * imagem / imagemAlt: o card só mostra a foto quando há imagemAlt — é o sinal
- * de que o arquivo existe em assets/img/servicos/ (fotos de 14/10/2026).
+ * imagem / imagemAlt: o card mostra a foto quando há `imagem` (fotos locais de
+ * 14/10/2026 em assets/img/servicos/); sem imagem, fica o bloco cinza.
  *
  * Lista de nomes recebida em 16/09/2026; critério de organização e a
  * confirmação de que são os 3 mais buscados vieram no documento de
@@ -20,9 +20,15 @@
  * tom simples do resto do site, não texto oficial dela. Troca fácil
  * quando/se o arquivo original chegar. Ainda PENDENTE: o restante da lista
  * (só temos os 3 mais procurados, pode haver outros serviços menores).
+ *
+ * Quando a plataforma publica (branch `publicado`), a lista de serviços vem
+ * de conteudo-mutare.js (ver mutare.js), na ordem do painel, e substitui
+ * esta. Lá a imagem é URL absoluta ou null. Depoimentos continuam locais.
  */
 
-export const servicos = [
+import { conteudo } from "./mutare.js?v=202610151544";
+
+const servicosLocais = [
   {
     nome: "Análise de solo",
     descricao: "A gente analisa o solo da sua propriedade e te diz o que fazer pra plantar melhor e colher mais.",
@@ -76,5 +82,16 @@ export const depoimentos = [
     foto: "",
   },
 ];
+
+export const servicos = conteudo
+  ? (conteudo.servicos ?? []).map((s, i) => ({
+      nome: s.nome ?? "",
+      descricao: s.descricao ?? "",
+      publicoAlvo: s.publicoAlvo ?? "",
+      imagem: s.imagem ?? null,
+      imagemAlt: s.imagemAlt ?? "",
+      ordem: i + 1,
+    }))
+  : servicosLocais;
 
 export default servicos;

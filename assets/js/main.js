@@ -6,15 +6,15 @@
  * Orquestra os módulos; cada um só age se encontrar sua marcação na página.
  */
 
-import { montarIncludes } from "./includes.js?v=202610141957";
-import { iniciarNavMobile } from "./nav-mobile.js?v=202610141957";
-import { iniciarValidacaoFormulario } from "./form-validation.js?v=202610141957";
-import { iniciarCarrosselDepoimentos } from "./testimonials-carousel.js?v=202610141957";
-import { renderizarEquipe } from "./equipe-render.js?v=202610141957";
-import { renderizarServicos } from "./servicos-render.js?v=202610141957";
-import { renderizarCertificados } from "./certificados-render.js?v=202610141957";
-import { renderizarDepoimentos } from "./cases-render.js?v=202610141957";
-import { hidratarSite } from "./site-render.js?v=202610141957";
+import { montarIncludes } from "./includes.js?v=202610151544";
+import { iniciarNavMobile } from "./nav-mobile.js?v=202610151544";
+import { iniciarValidacaoFormulario } from "./form-validation.js?v=202610151544";
+import { iniciarCarrosselDepoimentos } from "./testimonials-carousel.js?v=202610151544";
+import { renderizarEquipe } from "./equipe-render.js?v=202610151544";
+import { renderizarServicos } from "./servicos-render.js?v=202610151544";
+import { renderizarCertificados } from "./certificados-render.js?v=202610151544";
+import { renderizarDepoimentos } from "./cases-render.js?v=202610151544";
+import { hidratarSite } from "./site-render.js?v=202610151544";
 
 async function iniciar() {
   // header/footer primeiro — os demais dependem da marcação injetada

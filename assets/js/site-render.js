@@ -7,7 +7,7 @@
  * HTML em várias páginas.
  */
 
-import { site } from "../data/site.js?v=202610141957";
+import { site } from "../data/site.js?v=202610151544";
 
 export function hidratarSite() {
   const { whatsapp, email, endereco } = site.contato;

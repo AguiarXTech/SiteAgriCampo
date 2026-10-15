@@ -33,10 +33,17 @@
  *   Cargos dos 3 membros movidos de setor foram ajustados para nomear o setor novo
  *   (ex: "Gerente de RH" → "Gerente de Marketing"), mantendo o nível hierárquico —
  *   a cliente só pediu a troca de setor; confirmar se o cargo formal é outro.
+ *
+ * Quando a plataforma publica (branch `publicado`), setores e equipe vêm de
+ * conteudo-mutare.js (ver mutare.js) e substituem as listas abaixo. Lá o
+ * membro aponta o setor pelo NOME e a foto é URL absoluta já quadrada
+ * (600×600) ou null — null mostra as iniciais, como aqui.
  */
 
+import { conteudo } from "./mutare.js?v=202610151544";
+
 /** Ordem de exibição dos setores + cultura sugerida (a validar com a cliente). */
-export const setores = [
+const setoresLocais = [
   { id: "presidencia", nome: "Presidência", culturaTema: "Café", sugestao: true },
   { id: "marketing", nome: "Marketing", culturaTema: "Girassol", sugestao: true },
   { id: "comercial", nome: "Comercial", culturaTema: "Soja", sugestao: true },
@@ -46,7 +53,7 @@ export const setores = [
   { id: "membros", nome: "Membros", culturaTema: "", sugestao: false },
 ];
 
-export const equipe = [
+const equipeLocal = [
   // --- Presidência ---------------------------------------------------------
   {
     nome: "Jheniffer Camille Dayrell da Silva",
@@ -294,6 +301,39 @@ export const equipe = [
     fotoFonte: "Ronaldo .heif",
   },
 ];
+
+function setoresMutare(c) {
+  const lista = (c.setores ?? []).map((s) => ({
+    id: s.nome,
+    nome: s.nome,
+    culturaTema: s.cultura ?? "",
+    sugestao: false,
+  }));
+  // membro num setor fora da lista de setores: grupo no fim, pra não sumir do site
+  for (const m of c.equipe ?? []) {
+    if (m.setor && !lista.some((s) => s.id === m.setor)) {
+      lista.push({ id: m.setor, nome: m.setor, culturaTema: "", sugestao: false });
+    }
+  }
+  return lista;
+}
+
+function equipeMutare(c) {
+  return (c.equipe ?? []).map((m, i) => ({
+    nome: m.nome ?? "",
+    cargo: m.cargo ?? "",
+    formacao: m.formacao ?? "",
+    bio: m.bio ?? "",
+    setor: m.setor ?? "",
+    ordem: i + 1,
+    foto: m.foto ?? null,
+    fotoAlt: m.fotoAlt ?? "",
+    fotoStatus: m.foto ? "disponivel" : "pendente",
+  }));
+}
+
+export const setores = conteudo ? setoresMutare(conteudo) : setoresLocais;
+export const equipe = conteudo ? equipeMutare(conteudo) : equipeLocal;
 
 /** Agrupa a equipe por setor, na ordem definida em `setores`. */
 export function equipePorSetor() {

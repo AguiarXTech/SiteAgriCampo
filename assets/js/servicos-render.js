@@ -4,24 +4,44 @@
  * Dois pontos de montagem, ambos opcionais na página:
  *   [data-servicos-home]  → teaser da home, no máximo 3 itens
  *   [data-servicos]       → lista completa, em servicos.html
+ *
+ * Dados viram texto, nunca HTML: só textContent/setAttribute, sem innerHTML.
  */
 
-import { servicos } from "../data/servicos.js?v=202610141957";
+import { servicos } from "../data/servicos.js?v=202610151544";
+
+function elemento(tag, classe, texto) {
+  const el = document.createElement(tag);
+  if (classe) el.className = classe;
+  if (texto != null) el.textContent = texto;
+  return el;
+}
 
 function cardServico(s) {
-  const el = document.createElement("article");
-  el.className = "card-servico";
-  const pendente = s.nome.startsWith("PENDENTE");
-  const foto = s.imagemAlt
-    ? `<img class="card-servico__foto" src="${s.imagem}" alt="${s.imagemAlt}" loading="lazy" width="800" height="600">`
-    : `<div class="card-servico__foto"></div>`;
-  el.innerHTML = `
-    ${foto}
-    <div class="card-servico__corpo">
-      <p class="card-servico__label">${s.nome}</p>
-      ${pendente ? "" : `<p class="card__texto" style="margin-top:.5rem">${s.descricao}</p>`}
-    </div>
-  `;
+  const el = elemento("article", "card-servico");
+  const nome = s.nome ?? "";
+  const pendente = nome.startsWith("PENDENTE");
+
+  if (s.imagem) {
+    const img = elemento("img", "card-servico__foto");
+    img.setAttribute("src", s.imagem);
+    img.setAttribute("alt", s.imagemAlt ?? "");
+    img.setAttribute("loading", "lazy");
+    img.setAttribute("width", "800");
+    img.setAttribute("height", "600");
+    el.appendChild(img);
+  } else {
+    el.appendChild(elemento("div", "card-servico__foto"));
+  }
+
+  const corpo = elemento("div", "card-servico__corpo");
+  corpo.appendChild(elemento("p", "card-servico__label", nome));
+  if (!pendente && s.descricao) {
+    const p = elemento("p", "card__texto", s.descricao);
+    p.style.marginTop = ".5rem";
+    corpo.appendChild(p);
+  }
+  el.appendChild(corpo);
   return el;
 }
 

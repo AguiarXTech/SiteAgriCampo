@@ -6,9 +6,18 @@
  * e este módulo gera os setores (CONTEXT.md §6.2): cabeçalho do setor com a
  * cultura agrícola associada + grid de membros. Foto ausente vira placeholder
  * com as iniciais, nunca silhueta genérica.
+ *
+ * Dados viram texto, nunca HTML: só textContent/setAttribute, sem innerHTML.
  */
 
-import { equipePorSetor } from "../data/equipe.js?v=202610141957";
+import { equipePorSetor } from "../data/equipe.js?v=202610151544";
+
+function elemento(tag, classe, texto) {
+  const el = document.createElement(tag);
+  if (classe) el.className = classe;
+  if (texto != null) el.textContent = texto;
+  return el;
+}
 
 function iniciais(nome) {
   return nome
@@ -21,20 +30,31 @@ function iniciais(nome) {
 }
 
 function cardMembro(m) {
-  const el = document.createElement("article");
-  el.className = "membro";
+  const el = elemento("article", "membro");
 
-  const temFoto = m.fotoStatus === "disponivel";
-  const foto = temFoto
-    ? `<img class="membro__foto" src="${m.foto}" alt="Retrato de ${m.nome}, ${m.cargo} da Agricampo Jr., de camisa polo verde da empresa" loading="lazy" width="300" height="400">`
-    : `<div class="membro__foto" data-placeholder aria-hidden="true">${iniciais(m.nome)}</div>`;
+  if (m.fotoStatus === "disponivel" && m.foto) {
+    const img = elemento("img", "membro__foto");
+    img.setAttribute("src", m.foto);
+    img.setAttribute(
+      "alt",
+      m.fotoAlt ||
+        `Retrato de ${m.nome}, ${m.cargo} da Agricampo Jr., de camisa polo verde da empresa`,
+    );
+    img.setAttribute("loading", "lazy");
+    img.setAttribute("width", "600");
+    img.setAttribute("height", "600");
+    el.appendChild(img);
+  } else {
+    const placeholder = elemento("div", "membro__foto", iniciais(m.nome));
+    placeholder.setAttribute("data-placeholder", "");
+    placeholder.setAttribute("aria-hidden", "true");
+    el.appendChild(placeholder);
+  }
 
-  el.innerHTML = `
-    ${foto}
-    <h4 class="membro__nome">${m.nome}</h4>
-    <p class="membro__cargo">${m.cargo}</p>
-    ${m.formacao ? `<p class="membro__cargo">${m.formacao}</p>` : ""}
-  `;
+  el.appendChild(elemento("h4", "membro__nome", m.nome));
+  el.appendChild(elemento("p", "membro__cargo", m.cargo));
+  if (m.formacao) el.appendChild(elemento("p", "membro__cargo", m.formacao));
+  if (m.bio) el.appendChild(elemento("p", "membro__cargo", m.bio));
   return el;
 }
 
@@ -45,18 +65,21 @@ export function renderizarEquipe() {
   const frag = document.createDocumentFragment();
 
   equipePorSetor().forEach((grupo) => {
-    const secao = document.createElement("section");
-    secao.className = "setor";
+    const secao = elemento("section", "setor");
 
-    const cabecalho = document.createElement("div");
-    cabecalho.className = "setor__cabecalho";
-    cabecalho.innerHTML = `
-      <h3 class="setor__nome">${grupo.nome}</h3>
-      ${grupo.culturaTema ? `<span class="setor__cultura">${grupo.culturaTema}${grupo.sugestao ? " (a validar)" : ""}</span>` : ""}
-    `;
+    const cabecalho = elemento("div", "setor__cabecalho");
+    cabecalho.appendChild(elemento("h3", "setor__nome", grupo.nome));
+    if (grupo.culturaTema) {
+      cabecalho.appendChild(
+        elemento(
+          "span",
+          "setor__cultura",
+          `${grupo.culturaTema}${grupo.sugestao ? " (a validar)" : ""}`,
+        ),
+      );
+    }
 
-    const grid = document.createElement("div");
-    grid.className = "grid grid--3 grid--4";
+    const grid = elemento("div", "grid grid--3 grid--4");
     grupo.membros.forEach((m) => grid.appendChild(cardMembro(m)));
 
     secao.append(cabecalho, grid);
