@@ -1,0 +1,180 @@
+/* ==========================================================================
+   base.css — elementos e utilitários de layout
+   Depende de variables.css. Sem componentes visuais aqui (ver components.css).
+   ========================================================================== */
+
+body {
+  font-family: var(--fonte-corpo);
+  font-size: var(--fs-base);
+  font-weight: var(--peso-regular);
+  line-height: var(--leading-normal);
+  color: var(--texto-sobre-claro);
+  background-color: var(--fundo-claro);
+}
+
+/* --- Tipografia base ----------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fonte-titulo);
+  line-height: var(--leading-tight);
+  color: var(--titulo-sobre-claro);
+}
+
+h1 {
+  font-size: var(--fs-2xl);
+  font-weight: var(--peso-black);
+}
+
+h2 {
+  font-size: var(--fs-xl);
+  font-weight: var(--peso-bold);
+}
+
+h3 {
+  font-size: var(--fs-lg);
+  font-weight: var(--peso-semibold);
+}
+
+a {
+  color: var(--link-sobre-claro);
+  transition: color var(--transicao-rapida);
+}
+
+a:hover {
+  color: var(--cor-primaria);
+}
+
+strong {
+  font-weight: var(--peso-semibold);
+}
+
+/* --- Acessibilidade ---------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--cor-acento);
+  outline-offset: 2px;
+  border-radius: var(--raio-sm);
+}
+
+.pular-para-conteudo {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 999;
+  padding: var(--esp-3) var(--esp-4);
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+  border-radius: 0 0 var(--raio-md) 0;
+}
+
+.pular-para-conteudo:focus {
+  left: 0;
+}
+
+.sr-apenas {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Layout: container e seções --------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--largura-conteudo);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.secao {
+  padding-block: var(--secao-py);
+}
+
+/* Padrão de contraste alternado — recurso central da direção AgroPlan.
+   As seções alternam fundo claro e fundo verde-escuro; os componentes
+   (cards, botões) reagem via .em-fundo-escuro. */
+.secao--clara {
+  background-color: var(--fundo-claro);
+  color: var(--texto-sobre-claro);
+}
+
+.secao--alt {
+  background-color: var(--fundo-alt);
+  color: var(--texto-sobre-claro);
+}
+
+.secao--escura {
+  background-color: var(--fundo-escuro);
+  color: var(--texto-sobre-escuro);
+}
+
+.secao--escura h1,
+.secao--escura h2,
+.secao--escura h3 {
+  color: var(--texto-sobre-escuro);
+}
+
+.secao--escura a {
+  color: var(--cor-branco);
+}
+
+/* --- Cabeçalho de seção --------------------------------------------------- */
+
+.secao__cabecalho {
+  max-width: var(--largura-texto);
+  margin-bottom: var(--esp-7);
+}
+
+.secao__cabecalho--centro {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.rotulo-secao {
+  display: inline-block;
+  margin-bottom: var(--esp-3);
+  font-size: var(--fs-xs);
+  font-weight: var(--peso-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--cor-primaria-media);
+}
+
+.secao--escura .rotulo-secao {
+  color: var(--cor-acento);
+}
+
+.secao__titulo--caps {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+
+/* --- Utilitários mínimos --------------------------------------------------- */
+
+.texto-centro { text-align: center; }
+.medida-leitura { max-width: var(--largura-texto); }
+
+.grid {
+  display: grid;
+  gap: var(--esp-5);
+}
+
+@media (min-width: 640px) {
+  .grid--2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .grid--4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+[hidden] { display: none !important; }

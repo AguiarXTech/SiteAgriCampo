@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <base href="../">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossa História — Agricampo Jr.</title>
+  <meta name="description" content="A história da Agricampo Jr., empresa júnior de Agronomia de São João Evangelista - MG, e a sede da instituição.">
+  <link rel="icon" type="image/png" href="assets/img/logo/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/img/logo/favicon-16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="assets/img/logo/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css?v=202610141957">
+  <script type="module" src="assets/js/main.js?v=202610141957"></script>
+</head>
+<body>
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div data-include="assets/partials/header.html"></div>
+
+  <main id="conteudo">
+
+    <!-- NOSSA HISTÓRIA + MAPA DE MG (CONTEXT.md §6.6 — mapa ao lado do texto) -->
+    <section class="secao secao--clara">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <span class="rotulo-secao">Sobre</span>
+          <h1 class="secao__titulo--caps">Nossa história</h1>
+        </div>
+
+        <!-- texto + mapa lado a lado (pedido 14/10/2026); no celular o mapa desce -->
+        <div class="bloco-texto-foto">
+          <div class="medida-leitura">
+            <!-- texto oficial da cliente (14/10/2026, mockup-cliente/referencia/) -->
+            <p>A AGRICAMPO foi fundada em junho de 2015 por estudantes do curso de
+              Bacharelado em Agronomia do Instituto Federal de Minas Gerais – Campus
+              São João Evangelista.</p>
+            <p style="margin-top:1rem">A motivação para a criação da empresa júnior surgiu
+              da oportunidade de colocar em prática os conhecimentos adquiridos ao longo
+              do curso, além de levar essas habilidades para o meio rural, contribuindo
+              para o desenvolvimento da agricultura local.</p>
+            <p style="margin-top:1.5rem">
+              <strong>Faculdade:</strong> IFMG – Campus São João Evangelista.
+              <strong>Federação:</strong> Núcleo Vale do Aço (NúVA), FEJEMG, Brasil Júnior.
+              <strong>Professor orientador:</strong> Alisson José Eufrásio de Carvalho.
+            </p>
+          </div>
+
+          <!-- Mapa de MG gerado das malhas do IBGE (ferramentas/gerar-mapa-mg.py, variante
+               "lateral": nesta largura só os nomes das mesorregiões ficam legíveis) -->
+          <figure class="mapa-mg-figura">
+            <div data-include="assets/partials/mapa-mg-lateral.html"></div>
+            <figcaption class="membro__cargo">
+              São João Evangelista, no Vale do Rio Doce — Minas Gerais. Limites: IBGE.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR ONDE PASSAMOS — fotos reais de eventos (materiais da cliente, 14/10/2026).
+         Legendas só citam o que aparece na foto; nome/data do evento a confirmar. -->
+    <section class="secao secao--alt">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <span class="rotulo-secao">Na estrada</span>
+          <h2 class="secao__titulo--caps">Por onde a gente passa</h2>
+        </div>
+        <div class="grid grid--2 grid--4">
+          <figure class="galeria__item">
+            <img class="galeria__foto" src="assets/img/eventos/encontro-nuva-bandeira.jpg"
+                 alt="Membros da Agricampo Jr. segurando a bandeira da empresa diante de um painel com logos do Núcleo Vale do Aço e do Sebrae"
+                 width="900" height="900" loading="lazy">
+            <figcaption class="galeria__legenda">Em encontro do Núcleo Vale do Aço (NúVA).</figcaption>
+          </figure>
+          <figure class="galeria__item">
+            <img class="galeria__foto" src="assets/img/eventos/equipe-faemg.jpg"
+                 alt="Grupo grande de membros da Agricampo Jr. reunido com a bandeira da empresa em frente a um prédio com placa da FAEMG e do Senar"
+                 width="900" height="900" loading="lazy">
+            <figcaption class="galeria__legenda">A equipe reunida em evento do Sistema FAEMG/Senar.</figcaption>
+          </figure>
+          <figure class="galeria__item">
+            <img class="galeria__foto" src="assets/img/eventos/equipe-campus-bandeira.jpg"
+                 alt="Integrantes da Agricampo Jr. agachados e em pé com a bandeira da empresa, ao ar livre em um campus, sob céu azul"
+                 width="900" height="900" loading="lazy">
+            <figcaption class="galeria__legenda">Levando a bandeira da Agricampo para fora de casa.</figcaption>
+          </figure>
+          <figure class="galeria__item">
+            <img class="galeria__foto" src="assets/img/eventos/equipe-bandeira-baloes.jpg"
+                 alt="Membros da Agricampo Jr. sorrindo com a bandeira da empresa e balões verdes, vestindo a camisa da equipe"
+                 width="900" height="900" loading="lazy">
+            <figcaption class="galeria__legenda">Dia de festa com a equipe.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSSA SEDE — foto aérea (drone) (CONTEXT.md §6.7 — PENDENTE de produção) -->
+    <section class="secao secao--escura" id="sede">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <span class="rotulo-secao">Onde estamos</span>
+          <h2 class="secao__titulo--caps">Nossa sede</h2>
+        </div>
+        <!-- arquivo esperado: assets/img/sede/aerea.jpg (foto aérea/drone, produção pendente) -->
+        <div class="card" style="display:grid;place-items:center;min-height:320px;text-align:center">
+          <p class="card__texto">
+            Em breve, uma foto aérea da nossa sede.
+          </p>
+        </div>
+        <p style="margin-top:2rem">
+          <a class="btn btn--claro" href="contato.html#como-chegar">Ver como chegar</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-include="assets/partials/footer.html"></div>
+</body>
+</html>

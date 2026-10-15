@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <base href="./">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agricampo Jr. — Consultoria em Agronomia | São João Evangelista - MG</title>
+  <meta name="description" content="Empresa Júnior de Agronomia em São João Evangelista - MG. A gente ajuda produtor rural, cooperativa e empresa do agro a produzir mais, com preço justo.">
+  <link rel="icon" type="image/png" href="assets/img/logo/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/img/logo/favicon-16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="assets/img/logo/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css?v=202610141957">
+  <script type="module" src="assets/js/main.js?v=202610141957"></script>
+</head>
+<body>
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <div data-include="assets/partials/header.html"></div>
+
+  <main id="conteudo">
+
+    <!-- HERO — foto real de campo + headline em CAIXA ALTA (direção AgroPlan) -->
+    <section class="hero em-fundo-escuro">
+      <img class="hero__midia" src="assets/img/hero-campo.jpg"
+           alt="Equipe da Agricampo Jr. reunida ao ar livre, debaixo de uma árvore grande, todos de camisa polo verde segurando a bandeira da empresa"
+           width="960" height="640" fetchpriority="high" style="object-position:50% 45%"
+           onerror="this.remove()">
+      <div class="hero__overlay"></div>
+      <div class="container hero__conteudo">
+        <h1 class="hero__titulo">Ajuda de verdade pra sua lavoura ou criação produzir mais</h1>
+        <p class="hero__subtitulo moldura-colchete">
+          Somos estudantes de Agronomia de São João Evangelista - MG. A gente vai até sua
+          propriedade, vê o que precisa e ajuda a resolver, com <span style="text-decoration:underline;text-decoration-color:var(--cor-acento);text-decoration-thickness:2px;text-underline-offset:3px">preço justo</span>.
+        </p>
+        <div class="hero__acoes">
+          <a class="btn btn--claro" href="contato.html">Fale com a gente</a>
+          <a class="btn btn--contorno" href="servicos.html">Ver o que a gente faz</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE (teaser) — fundo claro -->
+    <section class="secao secao--clara">
+      <div class="container">
+        <!-- título dentro da coluna de texto: antes ficava sozinho em cima e o texto,
+             centralizado com a foto, abria um vão grande entre os dois -->
+        <div class="bloco-texto-foto">
+          <div>
+            <div class="secao__cabecalho">
+              <span class="rotulo-secao">Quem somos</span>
+              <h2 class="secao__titulo--caps">Gente que entende de roça e gosta de ajudar</h2>
+            </div>
+            <p class="medida-leitura">
+              <!-- história completa (2-3 parágrafos) ainda PENDENTE (CONTEXT.md §6.1) —
+                   este parágrafo é texto oficial da cliente, recebido em 02/10/2026 -->
+              A Agricampo Jr. é uma empresa júnior de Agronomia do IFMG – Campus São João
+              Evangelista, formada por estudantes que unem conhecimento acadêmico e prática
+              para desenvolver soluções para o setor agropecuário.
+            </p>
+            <p style="margin-top:1.5rem">
+              <a class="btn btn--contorno" href="sobre/historia.html">Nossa história</a>
+            </p>
+          </div>
+          <img class="foto-destaque" src="assets/img/eventos/equipe-campus-quem-somos.jpg"
+               alt="Integrantes da Agricampo Jr. agachados e em pé com a bandeira da empresa, ao ar livre em um campus, sob céu azul"
+               width="960" height="720" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSÃO / VISÃO / VALORES — fundo ESCURO, cards verde sólido (inversão) -->
+    <section class="secao secao--escura">
+      <div class="container">
+        <div class="secao__cabecalho secao__cabecalho--centro">
+          <span class="rotulo-secao">O que nos guia</span>
+          <h2 class="secao__titulo--caps">Missão, visão e valores</h2>
+        </div>
+        <div class="grid grid--3">
+          <article class="card">
+            <h3 class="card__titulo">Missão</h3>
+            <p class="card__texto">Disponibilizar serviços e orientação tecnológica de qualidade, visando o desenvolvimento do produtor rural e de sua propriedade, em São João Evangelista e região, oportunizando o aperfeiçoamento prático dos alunos envolvidos.</p>
+          </article>
+          <article class="card">
+            <h3 class="card__titulo">Visão</h3>
+            <p class="card__texto">A Agricampo tem como visão desenvolver os discentes e produtores assistidos, com o intuito de promover o crescimento socioeconômico e tecnológico, realizando serviços e orientações, com preços acessíveis, mantendo o profissionalismo e qualidade dos serviços prestados.</p>
+          </article>
+          <article class="card">
+            <h3 class="card__titulo">Valores</h3>
+            <ul class="card__texto card__lista">
+              <li>Compromisso</li>
+              <li>Resiliência</li>
+              <li>Ética</li>
+              <li>Equidade</li>
+              <li>Autenticidade</li>
+              <li>Conhecimento</li>
+              <li>Respeito</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS — fundo claro, cards com foto no topo + label -->
+    <section class="secao secao--alt">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <span class="rotulo-secao">Como ajudamos</span>
+          <h2 class="secao__titulo--caps">Serviços</h2>
+        </div>
+        <!-- renderizado por assets/js/servicos-render.js a partir de assets/data/servicos.js -->
+        <div class="grid grid--3" data-servicos-home></div>
+        <p style="margin-top:2rem">
+          <a class="btn btn--primario" href="servicos.html">Ver todos os serviços</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Números de impacto: OCULTOS até haver dados reais (CONTEXT.md §8) -->
+
+    <!-- CTA de diagnóstico — substitui números de resultado enquanto não há cases (§6.4) -->
+    <section class="secao secao--escura">
+      <div class="container texto-centro">
+        <h2 class="secao__titulo--caps">Quer saber o que sua propriedade precisa?</h2>
+        <p class="medida-leitura" style="margin:1rem auto 2rem">
+          Conta pra gente como está sua lavoura ou criação. A gente te fala o que fazer.
+        </p>
+        <a class="btn btn--acento" href="contato.html">Fale com a gente</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-include="assets/partials/footer.html"></div>
+</body>
+</html>
