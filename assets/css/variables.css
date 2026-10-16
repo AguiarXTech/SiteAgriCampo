@@ -1,0 +1,156 @@
+/* ==========================================================================
+   variables.css — DESIGN TOKENS do site da Agricampo Jr.
+   --------------------------------------------------------------------------
+   Fonte única de verdade para cor, tipografia, espaçamento, raio e sombra.
+   Nenhum outro arquivo deve cravar hex — todos consomem daqui.
+
+   Paleta TRAVADA em 16/09/2026, extraída pixel a pixel da logo real recebida
+   da cliente (mockup-cliente/referencia/Logo-colorida-agricampo.png) e do
+   post "Radar Agricampo" que a empresa júnior já publica (Elemento DSG.png):
+     - preto puro  #000000  (traço da logo, texto dos posts)
+     - verde-sinal #00af02  (a outra cor da logo — saturação 100%, matiz 121°)
+   Isso SUBSTITUI a estimativa anterior (verde-escuro ao estilo AgroPlan-UFV,
+   §5 do CONTEXT.md) — a marca real da cliente manda mais que a referência de
+   benchmark. A ESTRUTURA aprovada por ela continua valendo (seções que
+   alternam fundo claro/escuro, cards que invertem cor, CAIXA ALTA, botão
+   pill).
+
+   ⚠️ AJUSTE em 18/09/2026: a primeira versão desta paleta usava PRETO puro
+   como fundo dominante das seções "escuras" — a cliente achou que ficou
+   "muita área preta" e pediu pra voltar o verde. --cor-primaria* volta a ser
+   verde, mas agora um verde DERIVADO DO MATIZ REAL da logo (121°), não mais
+   o verde-escuro estimado do AgroPlan — mesma lógica de antes (uma sombra
+   escura pro fundo, o verde-sinal puro reservado pro acento), com a cor
+   certa. --cor-acento (#00af02, o verde exato da logo) não mudou.
+
+   Direção tipográfica dos posts reais: título bem bold e arredondado
+   ("RADAR AGRICAMPO"), diferente do Poppins usado até aqui — ver §"Tipografia".
+   ========================================================================== */
+
+:root {
+  /* --- Marca ---------------------------------------------------------------
+   * --cor-primaria-* = o "escuro" que alterna com o branco — verde profundo,
+   * do mesmo matiz da logo. --cor-acento* = o verde-sinal exato da logo
+   * (#00af02), reservado para PREENCHIMENTO (botão, borda, ponto,
+   * sublinhado) — a logo nunca usa esse verde como cor de texto corrido,
+   * sempre como forma; seguimos o mesmo padrão.
+   */
+  --cor-primaria: #0b500d;          /* verde escuro (matiz 121° da logo) — fundo dominante das seções "escuras" */
+  --cor-primaria-escura: #083a09;   /* mais escuro ainda — hover, cards e rodapé dentro de seção escura */
+  --cor-primaria-clara: #3fa641;    /* verde suave — só decorativo (ex: contorno do mapa de MG) */
+  --cor-primaria-media: #0a8a00;    /* verde acessível p/ texto sobre branco (rótulos, números) */
+  --cor-acento: #00af02;            /* VERDE DA LOGO — reservar p/ preenchimento (CTA, borda, ponto) */
+  --cor-acento-escura: #059100;
+
+  /* --- Neutros --------------------------------------------------------------- */
+  --cor-branco: #ffffff;
+  --cor-creme: #f5f1e8;             /* bege terroso p/ um 3º fundo alternado, se necessário */
+  --cor-cinza-50: #f7f8f7;
+  --cor-cinza-100: #eceeec;
+  --cor-cinza-200: #dfe2df;
+  --cor-cinza-300: #c4c9c5;
+  --cor-cinza-texto: #6b7280;       /* corpo de texto secundário */
+  --cor-texto: #1a1a1a;             /* corpo de texto sobre fundo claro */
+  --cor-preto: #000000;             /* preto puro da marca — texto sobre --cor-acento (ver .btn--acento) */
+
+  /* --- Papéis semânticos (o que o CSS deve referenciar no dia a dia) ------ */
+  --fundo-claro: var(--cor-branco);
+  --fundo-escuro: var(--cor-primaria);
+  --fundo-alt: var(--cor-cinza-50);
+
+  --texto-sobre-claro: var(--cor-texto);
+  --texto-suave-sobre-claro: var(--cor-cinza-texto);
+  --texto-sobre-escuro: var(--cor-branco);
+  --texto-suave-sobre-escuro: rgba(255, 255, 255, 0.78);
+
+  --titulo-sobre-claro: var(--cor-primaria);
+  --link-sobre-claro: var(--cor-primaria-media);
+
+  --borda-clara: var(--cor-cinza-200);
+  --borda-escura: rgba(255, 255, 255, 0.16);
+
+  /* overlay verde para foto no hero — textura de campo por baixo continua
+     real; ver components.css .hero__overlay */
+  --overlay-foto-1: rgba(11, 80, 13, 0.45);
+  --overlay-foto-2: rgba(8, 58, 9, 0.88);
+
+  /* estados de formulário / validação */
+  --cor-erro: #c0392b;
+  --cor-erro-fundo: #fdeceb;
+  --cor-sucesso: #1e7d4f;
+  --cor-sucesso-fundo: #e7f4ec;
+
+  /* --- Tipografia -----------------------------------------------------------
+   * A logo e os posts reais ("RADAR AGRICAMPO") usam um título bem bold e
+   * arredondado — mais chapado que o Poppins puro. Aproximação com Google
+   * Fonts: Baloo 2 (peso 800) para heading/display; Poppins segue para
+   * corpo/UI, que precisa ficar neutro e legível. ⚠️ é aproximação — a fonte
+   * exata do material da cliente não foi fornecida (provavelmente vetorizada
+   * à mão no Canva); pedir o arquivo de fonte se quiser 1:1.
+   */
+  --fonte-titulo: "Baloo 2", "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --fonte-corpo: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --peso-regular: 400;
+  --peso-medio: 500;
+  --peso-semibold: 600;
+  --peso-bold: 700;
+  --peso-black: 800;
+
+  /* escala de tamanho — fluida (min → max) via clamp */
+  --fs-xs: 0.75rem;      /* 12px — legendas, labels de card */
+  --fs-sm: 0.875rem;     /* 14px */
+  --fs-base: 1rem;       /* 16px — corpo */
+  --fs-md: 1.125rem;     /* 18px — subtítulos, lead */
+  --fs-lg: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);      /* h3 */
+  --fs-xl: clamp(1.6rem, 1.3rem + 1.5vw, 2.25rem);      /* h2 */
+  --fs-2xl: clamp(2.1rem, 1.6rem + 2.6vw, 3.5rem);      /* h1 / hero */
+  --fs-3xl: clamp(2.6rem, 1.8rem + 4vw, 4.5rem);        /* números de impacto */
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+
+  --tracking-caps: 0.02em;  /* Baloo 2 já é bem cheio; tracking menor que o Poppins usava */
+  --tracking-label: 0.12em; /* labels pequenos tipo "GESTÃO RURAL" (ref. Aegro) */
+
+  /* --- Espaçamento (escala base 4px) ------------------------------------- */
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-5: 1.5rem;
+  --esp-6: 2rem;
+  --esp-7: 3rem;
+  --esp-8: 4rem;
+  --esp-9: 6rem;
+  --esp-10: 8rem;
+
+  --secao-py: clamp(3.5rem, 2.5rem + 5vw, 7rem);  /* respiro vertical padrão de seção */
+
+  /* --- Layout ------------------------------------------------------------ */
+  --largura-conteudo: 1200px;
+  --largura-texto: 68ch;        /* medida de leitura confortável */
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --altura-header: 76px;
+
+  /* --- Raio -------------------------------------------------------------- */
+  --raio-sm: 6px;
+  --raio-md: 12px;
+  --raio-lg: 20px;
+  --raio-pill: 999px;           /* botões pill — característica da ref. AgroPlan, mantida */
+
+  /* --- Sombra (uso comedido) ----------------------------------------------- */
+  --sombra-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --sombra-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --sombra-foco: 0 0 0 3px rgba(0, 175, 2, 0.45);
+
+  /* --- Movimento ------------------------------------------------------------ */
+  --transicao-rapida: 140ms ease;
+  --transicao-base: 240ms ease;
+
+  /* --- Camadas --------------------------------------------------------------- */
+  --z-header: 100;
+  --z-menu-mobile: 200;
+  --z-whatsapp: 150;
+}

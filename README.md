@@ -1,0 +1,190 @@
+# Site Agricampo Jr.
+
+Site institucional e comercial da **Agricampo Jr.**, empresa júnior de Agronomia de
+São João Evangelista - MG.
+
+**Stack:** HTML5 + CSS3 + JavaScript vanilla (ES modules). Sem framework, sem build,
+sem back-end — site 100% estático (CONTEXT.md §2).
+
+Direção de design: estrutura da linha **AgroPlan-UFV** (seções que alternam fundo
+claro/escuro, cards que invertem de cor, headings em CAIXA ALTA, botão pill, foto real
+de campo — CONTEXT.md §5) **recolorida com a marca real da cliente** a partir da logo e
+de um post que a empresa já publica (`mockup-cliente/referencia/`, recebidos 16/09/2026):
+**preto `#000000` + verde-sinal `#00AF02`** substituem o verde-escuro estimado do
+AgroPlan. Ver `variables.css` para o racional completo token por token.
+
+O contexto completo do projeto está em [`estrutura/CONTEXT.md`](estrutura/CONTEXT.md).
+A plataforma que vai gerenciar o conteúdo deste site (Mutare, da AguiarXTech) está
+descrita em [`estrutura/PLATAFORMA_MUTARE_README.md`](estrutura/PLATAFORMA_MUTARE_README.md).
+
+---
+
+## Como rodar localmente
+
+O site usa `fetch` para injetar header/footer e para ler a camada de conteúdo — isso
+**não funciona abrindo o HTML por `file://`**. É preciso um servidor HTTP:
+
+```bash
+npx serve .
+# ou: python -m http.server 8000
+# ou: extensão "Live Server" do VS Code
+```
+
+Depois abra `http://localhost:3000` (ou a porta indicada).
+
+---
+
+## Como publicar
+
+O site é servido pelo GitHub Pages a partir da branch `main`. Antes do commit que
+vai para a `main`, rode:
+
+```bash
+python3 ferramentas/versionar-assets.py
+```
+
+Ele carimba `?v=<data-hora>` em todo CSS/JS referenciado (HTML, `@import` e `import`
+entre módulos). Sem isso o navegador de quem já visitou o site continua usando o
+CSS/JS antigo por ~10 min — às vezes mesmo com Ctrl+F5, por causa dos `@import`.
+O header/rodapé (`assets/partials/`) não precisa: `includes.js` busca com `cache: "no-cache"`.
+
+---
+
+## Estrutura
+
+```
+/
+├── index.html                 Home
+├── sobre/
+│   ├── historia.html          Nossa História + mapa de MG + Nossa Sede (#sede)
+│   └── equipe.html            Equipe por setor (grid gerado por JS)
+├── servicos.html
+├── certificados.html          Certificados da empresa (grid gerado por JS)
+├── cases.html                 Depoimentos / Casos de Sucesso
+├── contato.html               Formulário (spec §7) + Como Chegar (#como-chegar)
+├── assets/
+│   ├── css/
+│   │   ├── main.css           único arquivo linkado pelas páginas (@import dos demais)
+│   │   ├── variables.css      DESIGN TOKENS — único lugar com hex
+│   │   ├── reset.css
+│   │   ├── base.css           elementos + utilitários de layout
+│   │   ├── components.css     header, hero, cards, form, rodapé, whatsapp, mapa
+│   │   └── pages/             CSS específico por página (vazio por ora)
+│   ├── js/
+│   │   ├── main.js            ponto de entrada (type="module")
+│   │   ├── includes.js        injeta os partials
+│   │   ├── nav-mobile.js      menu hambúrguer
+│   │   ├── form-validation.js validação client-side (não envia — ver pendências)
+│   │   ├── testimonials-carousel.js
+│   │   ├── equipe-render.js   monta o grid da equipe
+│   │   ├── servicos-render.js monta os cards de serviço (home + servicos.html)
+│   │   ├── certificados-render.js monta o grid de certificados.html
+│   │   └── site-render.js     injeta dados institucionais (whatsapp, contato)
+│   ├── data/                  CAMADA DE CONTEÚDO (ver abaixo)
+│   │   ├── site.js            institucional, hero, localização, contato (§6.1, §6.5)
+│   │   ├── equipe.js          equipe real por setor (§6.2)
+│   │   ├── servicos.js        serviços (§6.3) — 3 reais recebidos, restante pendente
+│   │   └── certificados.js    certificados da empresa — placeholders
+│   ├── partials/
+│   │   ├── header.html
+│   │   └── footer.html
+│   └── img/                   logo/ equipe/ servicos/ cases/ parceiros/ mapa/ sede/
+└── estrutura/                 documentos de contexto (não é parte do site servido)
+```
+
+---
+
+## Camada de conteúdo (`assets/data/`)
+
+Todo o conteúdo textual e estruturado vive em `assets/data/*.js`, **separado do HTML**.
+O formato de cada arquivo espelha as *collections* do Payload/Mutare
+(`site-info`, `people`, `services`), para que a migração para a plataforma seja direta:
+
+| Arquivo | Collection Mutare | Observação |
+| --- | --- | --- |
+| `site.js` | `site-info` | um documento por tenant |
+| `equipe.js` | `people` | **+ campos `setor` e `culturaTema`** que ainda não existem no schema do Mutare |
+| `servicos.js` | `services` (+ cases) | cases podem virar collection nova |
+
+Quando o site for ligado ao Mutare, troca-se a origem desses módulos por chamadas à
+API da plataforma — o HTML e o CSS não mudam.
+
+---
+
+## Pendências que bloqueiam o site ir ao ar
+
+Não bloqueiam o desenvolvimento (há placeholders), mas precisam ser resolvidas
+(CONTEXT.md §10):
+
+- [x] ~~Cores exatas em hex~~ — **travadas em 16/09/2026**, extraídas pixel a pixel da
+      logo real (`--cor-primaria: #000000`, `--cor-acento: #00af02` em `variables.css`).
+- [x] ~~Logo~~ — **recebida e integrada**: `assets/img/logo/agricampo-logo-branca.png`
+      (header) e `agricampo-logo-colorida.png`, recortadas da arte original
+      (`mockup-cliente/referencia/`). Favicon gerado a partir da mesma arte
+      (`favicon-16/32/180.png`) — ainda não é um ícone dedicado, então fica pouco
+      legível em 16px; se a cliente tiver uma versão só do símbolo (sem o texto
+      "AGRICAMPO"), o favicon fica bem melhor.
+- [x] ~~Mapa de MG~~ — **feito 14/10/2026**: SVG gerado das malhas do IBGE (12 mesorregiões,
+      66 microrregiões) por `ferramentas/gerar-mapa-mg.py` (requer `pip install shapely`),
+      em `assets/partials/mapa-mg-lateral.html` (História, ao lado do texto — só os nomes das
+      mesorregiões, que é o que fica legível nessa largura) e `mapa-mg-compacto.html` (Contato).
+      A variante com os nomes das 66 microrregiões continua no script (`... completo`) para uso
+      em largura total. O pino de São João Evangelista usa a posição real do município
+      (microrregião de Guanhães); o rótulo "Peçanha" foi retirado a pedido da cliente. Não usar
+      o mapa do iStock da referência — tem direitos autorais.
+- [ ] **Tipografia** — título trocado para **Baloo 2** (aproximação do lettering bold/
+      arredondado dos posts reais); não é a fonte exata (provável arte vetorizada à mão
+      no Canva) — pedir o arquivo de fonte se quiser 1:1.
+- [ ] **Assets de imagem** — materiais de 14/10/2026 curados e publicados em `assets/img/`
+      (JPEG sem EXIF/GPS, recortados para o formato de cada slot): `hero-campo.jpg`,
+      `servicos/` (análise de solo, CAR/ITR), `eventos/` (home + história), `campo/`
+      (galeria de `servicos.html`) e 15 retratos em `equipe/`. O hero usa a foto do time
+      inteiro (`imagemEquipeAgriCampo.jpeg`) — só tem 960px (veio pelo WhatsApp), suavizada
+      pelo overlay verde; trocar por uma foto de campo em alta resolução quando houver.
+      Ainda falta:
+  - confirmar se a foto do time inteiro (hero) é da formação atual (rostos identificáveis)
+  - identificar quem são `duda 1.heif` e `IMG_7249/7492/7496/7561/7564.HEIC` (retratos
+    sem nome) — sem foto hoje: Lorena, Rafaella, Tais, Nayara, Thaissa, Elias
+  - `sede/aerea.jpg` (foto de drone — produção pendente)
+- [x] ~~Missão, visão e valores~~ — **recebidos da cliente** (visão/valores 16/09/2026,
+      missão 02/10/2026) e publicados em `assets/data/site.js` + `index.html`.
+- [x] ~~Instituição, ano de fundação, federação, professor orientador~~ — **confirmados
+      14/10/2026** (documento da diretoria, `mockup-cliente/referencia/`): IFMG – Campus
+      São João Evangelista · fundada em 2015 · Núcleo Vale do Aço (NúVA), FEJEMG, Brasil
+      Júnior · orientador Alisson José Eufrásio de Carvalho.
+- [x] ~~WhatsApp, e-mail, endereço da sede~~ — **confirmados 14/10/2026**, em
+      `assets/data/site.js` → `contato` (e já refletidos no rodapé, `contato.html` e no
+      botão de WhatsApp flutuante).
+- [x] ~~Link do Instagram~~ — **confirmado 14/10/2026**, no rodapé.
+- [x] ~~Critério de organização dos serviços~~ — **confirmado 14/10/2026**: por
+      popularidade (os 3 mais procurados). `ordem` em `servicos.js` já reflete o ranking.
+- [x] ~~Primeiro depoimento real~~ — **recebido 14/10/2026** (print de WhatsApp, cliente
+      Pedro, serviço de Análise de solo) e publicado em `cases.html`. A cliente pediu
+      para eu inventar mais dois pra "preencher" — não fiz isso (ver conversa); o caminho
+      real é repetir esse mesmo follow-up de WhatsApp com outros clientes atendidos.
+- [x] ~~Descrição de cada serviço~~ — a cliente pediu (14/10/2026) pra eu escrever, já que
+      o "arquivo separado" com o texto dela não chegou. São rascunho meu em `servicos.js`,
+      não texto oficial — trocar fácil se/quando o arquivo original aparecer.
+- [ ] **Conteúdo que ainda falta**: 3º parágrafo da história institucional (os 2
+      primeiros já são texto oficial), possíveis serviços além dos 3 mais procurados,
+      certificados, mapeamento setor → cultura agrícola.
+- [ ] **Serviço de envio do formulário** — Formspree ou EmailJS (ver `form-validation.js`, `TODO envio`).
+- [x] ~~Hospedagem~~ — **no ar desde 01/10/2026** via GitHub Pages:
+      https://aguiarxtech.github.io/SiteAgriCampo/ (repositório público, branch `main`).
+      Todo caminho é relativo a `<base>` (ver `includes.js`), então funciona igual numa
+      subpasta ou, se um domínio próprio for comprado depois, na raiz.
+- [x] ~~Esclarecer a foto `felipe 1.heif`~~ — é o Luís Felipe, adicionado ao setor Comercial.
+
+---
+
+## Roadmap
+
+- **Fase 0 — Fundação** ✅ estrutura, design tokens, camada de conteúdo (equipe real),
+  shell (header/footer/nav/whatsapp), esqueleto de todas as páginas.
+- **Fase 1 — MVP** — Home, Sobre, Serviços, Contato com conteúdo real; formulário
+  conectado a um serviço de envio; mapa de MG com SVG real.
+- **Fase 2 — Conteúdo + qualidade** — fotos da equipe, foto aérea, vídeo de acesso,
+  cases, hex confirmados, passe de acessibilidade/SEO/imagens, deploy.
+- **Fase 3 — Integração Mutare** — trocar a camada de conteúdo pela API da plataforma;
+  no lado do Mutare, adicionar os campos/collections que faltam.
+- **Fase 4 — Conteúdos** — Blog, Ebooks, Trabalhe Conosco.

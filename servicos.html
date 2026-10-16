@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <base href="./">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços — Agricampo Jr.</title>
+  <meta name="description" content="Serviços de consultoria agronômica da Agricampo Jr. para produtores rurais, cooperativas e agroindústrias.">
+  <link rel="icon" type="image/png" href="assets/img/logo/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/img/logo/favicon-16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="assets/img/logo/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css?v=202610151544">
+  <script type="module" src="assets/js/main.js?v=202610151544"></script>
+</head>
+<body>
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div data-include="assets/partials/header.html"></div>
+
+  <main id="conteudo">
+    <section class="secao secao--clara">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <span class="rotulo-secao">Como ajudamos</span>
+          <h1 class="secao__titulo--caps">Serviços</h1>
+          <p style="margin-top:1rem">
+            <!-- CONTEXT.md §6.3 / §10 — critério de organização (por público-alvo ou
+                 por área técnica) ainda PENDENTE. Lista parcial recebida em 16/09/2026;
+                 a cliente confirmou que o restante dos serviços ainda vem. -->
+            Esses são alguns dos jeitos que a gente pode ajudar. Em breve, mais serviços por aqui.
+          </p>
+        </div>
+
+        <!-- renderizado por assets/js/servicos-render.js a partir de assets/data/servicos.js -->
+        <div class="grid grid--3" data-servicos></div>
+      </div>
+    </section>
+
+    <!-- EM CAMPO — fotos reais de trabalho (materiais da cliente, 14/10/2026) -->
+    <section class="secao secao--alt">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <span class="rotulo-secao">Mão na massa</span>
+          <h2 class="secao__titulo--caps">A gente em campo</h2>
+        </div>
+        <div class="grid grid--3">
+          <figure class="galeria__item">
+            <img class="galeria__foto" src="assets/img/campo/manejo-aves-equipe.jpg"
+                 alt="Dois membros da Agricampo Jr., de máscara e luvas, examinando uma galinha dentro de um galpão de aves"
+                 width="900" height="900" loading="lazy">
+          </figure>
+          <figure class="galeria__item">
+            <img class="galeria__foto" src="assets/img/campo/vistoria-cerca.jpg"
+                 alt="Membro da Agricampo Jr. de boné conferindo o celular junto a uma cerca, em estrada de terra com morros e mata ao fundo"
+                 width="720" height="720" loading="lazy">
+          </figure>
+          <figure class="galeria__item">
+            <img class="galeria__foto" src="assets/img/campo/manejo-aves.jpg"
+                 alt="Membro da Agricampo Jr. de touca, máscara e luvas segurando uma ave em um aviário coberto"
+                 width="900" height="900" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--escura">
+      <div class="container texto-centro">
+        <h2 class="secao__titulo--caps">Não sabe por onde começar?</h2>
+        <p class="medida-leitura" style="margin:1rem auto 2rem">Fala com a gente que a gente te ajuda a decidir.</p>
+        <a class="btn btn--acento" href="contato.html">Fale com a gente</a>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="assets/partials/footer.html"></div>
+</body>
+</html>
