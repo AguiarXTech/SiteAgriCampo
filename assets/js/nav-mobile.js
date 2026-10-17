@@ -1,7 +1,7 @@
 /**
  * nav-mobile.js — abre/fecha o menu no mobile (toggle hambúrguer).
  *
- * Requisitos de acessibilidade (CONTEXT.md §9):
+ * Requisitos de acessibilidade:
  *   - o botão tem aria-expanded refletindo o estado
  *   - Esc fecha o menu
  *   - foco não escapa para trás do backdrop enquanto aberto

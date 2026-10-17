@@ -1,6 +1,6 @@
 /**
  * cases-render.js — monta os cards de depoimento em cases.html
- * a partir de `depoimentos` em assets/data/servicos.js (CONTEXT.md §6.4).
+ * a partir de `depoimentos` em assets/data/servicos.js.
  *
  * Com um único depoimento real, mostra um card estático. Quando houver 2+,
  * o HTML do carrossel comentado em cases.html pode ser ligado a
@@ -9,7 +9,7 @@
  * Dados viram texto, nunca HTML: só textContent/setAttribute, sem innerHTML.
  */
 
-import { depoimentos } from "../data/servicos.js?v=202610151544";
+import { depoimentos } from "../data/servicos.js?v=202610172038";
 
 function elemento(tag, classe, texto) {
   const el = document.createElement(tag);

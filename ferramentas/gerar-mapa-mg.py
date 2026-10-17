@@ -65,7 +65,7 @@ MICRO_NOMES = {
     "MANHUACU": "Manhuaçu", "VICOSA": "Viçosa", "MURIAE": "Muriaé", "UBA": "Ubá",
     "JUIZ DE FORA": "Juiz de Fora", "CATAGUASES": "Cataguases",
 }
-# Pedido da cliente: no lugar do rótulo "Peçanha" entra São João Evangelista
+# No lugar do rótulo "Peçanha" entra São João Evangelista
 # (o município fica na microrregião de Guanhães, ~30 km a oeste de Peçanha —
 # o pino usa a posição real do município, não a do rótulo removido).
 MICRO_SEM_ROTULO = {"PECANHA"}
@@ -181,7 +181,7 @@ def texto(x, y, linhas, cls, fs, lh=1.15):
 # largura): na tela, multiplique pela escala (largura exibida / 1000).
 VARIANTES = {
     # largura total (~1040px): nomes das 66 microrregiões. Não usada hoje — a
-    # cliente preferiu o mapa ao lado do texto (14/10/2026); fica disponível.
+    # variante não usada hoje (o site usa o mapa ao lado do texto); fica disponível.
     "completo": dict(arquivo="mapa-mg.html", gerar=False, micro=True, rot_micro=True, rot_meso=True,
                      fs_meso=15, fs_sje=17, lado="dir", r=(7, 16), sufixo="", classe=""),
     # ao lado do texto da História (~540px): só os nomes das mesorregiões, maiores
@@ -225,7 +225,7 @@ def gerar(dados, v):
     out.append("</g>")
 
     # 4) rótulo de São João Evangelista. À DIREITA do pino (variante completa) ele
-    #    fica sobre a microrregião de Peçanha, cujo rótulo saiu a pedido da cliente;
+    #    fica sobre a microrregião de Peçanha, cujo rótulo foi retirado;
     #    nas variantes menores a fonte é maior e só cabe à esquerda.
     fs_sje = v["fs_sje"]
     larg_sje = len("São João Evangelista") * fs_sje * 0.6

@@ -5,7 +5,7 @@
  * Dados viram texto, nunca HTML: só textContent/setAttribute, sem innerHTML.
  */
 
-import { certificados } from "../data/certificados.js?v=202610151544";
+import { certificados } from "../data/certificados.js?v=202610172038";
 
 function elemento(tag, classe, texto) {
   const el = document.createElement(tag);

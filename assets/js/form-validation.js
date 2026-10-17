@@ -1,9 +1,8 @@
 /**
  * form-validation.js — validação client-side do formulário de contato.
- * Spec dos campos: CONTEXT.md §7 (extraída do formulário do AgroPlan-UFV).
  *
  * ⚠️ Isto valida; NÃO envia. O envio depende de um serviço externo
- *    (Formspree / EmailJS — decisão pendente, CONTEXT.md §10). O ponto de
+ *    (Formspree / EmailJS). O ponto de
  *    integração está marcado abaixo com "TODO envio".
  */
 
@@ -67,7 +66,7 @@ export function iniciarValidacaoFormulario() {
       return;
     }
 
-    // TODO envio — plugar Formspree/EmailJS aqui (CONTEXT.md §10).
+    // TODO envio — plugar Formspree/EmailJS aqui.
     // Enquanto não há serviço, apenas confirma a validação localmente.
     if (aviso) {
       aviso.className = "form-aviso form-aviso--sucesso";

@@ -12,8 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css?v=202610151544">
-  <script type="module" src="assets/js/main.js?v=202610151544"></script>
+  <link rel="stylesheet" href="assets/css/main.css?v=202610172038">
+  <script type="module" src="assets/js/main.js?v=202610172038"></script>
 </head>
 <body>
   <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
@@ -21,7 +21,7 @@
 
   <main id="conteudo">
 
-    <!-- FORMULÁRIO — campos exatos da spec CONTEXT.md §7 (fundo escuro, padrão AgroPlan) -->
+    <!-- FORMULÁRIO -->
     <section class="secao secao--escura">
       <div class="container">
         <div class="grid grid--2" style="gap:3rem;align-items:start">
@@ -97,13 +97,12 @@
             </div>
 
             <button class="btn btn--acento" type="submit">Enviar</button>
-            <!-- ⚠️ envio ainda não conectado — serviço (Formspree/EmailJS) pendente (CONTEXT.md §10) -->
           </form>
         </div>
       </div>
     </section>
 
-    <!-- COMO CHEGAR — mapa + vídeo do trajeto (CONTEXT.md §6.6 / §6.8) -->
+    <!-- COMO CHEGAR — mapa + vídeo do trajeto -->
     <section class="secao secao--clara" id="como-chegar">
       <div class="container">
         <div class="secao__cabecalho">
@@ -116,14 +115,13 @@
             <p class="medida-leitura">
               Av. Primeiro de Junho, 1043, Centro, São João Evangelista - MG, CEP 39705-000
               — Prédio de Convivência (IFMG).
-              <!-- orientações de acesso por extenso (a pé/carro, pontos de referência) ainda PENDENTES -->
             </p>
             <!-- versão compacta (só mesorregiões + pino), gerada por ferramentas/gerar-mapa-mg.py -->
             <div style="margin-top:1.5rem" data-include="assets/partials/mapa-mg-compacto.html"></div>
           </div>
 
           <figure>
-            <!-- Vídeo do trajeto: embutir via <iframe> do YouTube (não listado) ou Vimeo quando pronto (CONTEXT.md §6.8) — PENDENTE de produção -->
+            <!-- Vídeo do trajeto: embutir via <iframe> do YouTube ou Vimeo -->
             <div class="card" style="display:grid;place-items:center;aspect-ratio:16/9;text-align:center">
               <p class="card__texto">Em breve, um vídeo mostrando o caminho até aqui.</p>
             </div>

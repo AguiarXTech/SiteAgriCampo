@@ -8,7 +8,7 @@
  * Dados viram texto, nunca HTML: só textContent/setAttribute, sem innerHTML.
  */
 
-import { servicos } from "../data/servicos.js?v=202610151544";
+import { servicos } from "../data/servicos.js?v=202610172038";
 
 function elemento(tag, classe, texto) {
   const el = document.createElement(tag);

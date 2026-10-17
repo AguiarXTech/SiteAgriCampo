@@ -5,7 +5,7 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   Botões — formato pill (característica da referência AgroPlan)
+   Botões — formato pill
    -------------------------------------------------------------------------- */
 
 .btn {
@@ -45,7 +45,7 @@
 }
 .btn--acento:hover { background-color: var(--cor-acento-escura); }
 
-/* branco com texto verde — CTA sobre fundo escuro (padrão do hero AgroPlan) */
+/* branco com texto verde — CTA sobre fundo escuro (hero e seções escuras) */
 .btn--claro {
   background-color: var(--cor-branco);
   color: var(--cor-primaria);
@@ -354,9 +354,8 @@
 }
 
 /* --------------------------------------------------------------------------
-   Moldura de colchetes "[ ]" — motivo recorrente dos posts reais da empresa
-   (ver mockup-cliente/referencia/Elemento DSG.png: legenda e data emolduradas
-   assim). Usar em frases curtas de destaque, não em blocos longos de texto.
+   Moldura de colchetes "[ ]" — motivo recorrente da identidade da empresa.
+   Usar em frases curtas de destaque, não em blocos longos de texto.
    -------------------------------------------------------------------------- */
 
 .moldura-colchete {
@@ -493,7 +492,7 @@
 
 /* --------------------------------------------------------------------------
    Bloco de números de impacto
-   (só usar quando houver números REAIS — CONTEXT.md §8)
+   (só usar quando houver números reais)
    -------------------------------------------------------------------------- */
 
 .numeros { display: grid; gap: var(--esp-6); grid-template-columns: repeat(2, 1fr); text-align: center; }
@@ -509,7 +508,7 @@
 .numero__legenda { margin-top: var(--esp-2); font-size: var(--fs-sm); color: var(--texto-suave-sobre-claro); }
 
 /* --------------------------------------------------------------------------
-   Depoimento — card de avaliação real de cliente (CONTEXT.md §6.4)
+   Depoimento — card de avaliação real de cliente
    -------------------------------------------------------------------------- */
 
 .depoimento {
@@ -550,7 +549,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   Equipe — grid por setor, cada setor associado a uma cultura (CONTEXT.md §6.2)
+   Equipe — grid por setor, cada setor associado a uma cultura
    -------------------------------------------------------------------------- */
 
 .setor { margin-bottom: var(--esp-8); }
@@ -601,7 +600,7 @@
 .membro__cargo { font-size: var(--fs-sm); color: var(--texto-suave-sobre-claro); }
 
 /* --------------------------------------------------------------------------
-   Formulário de contato (spec CONTEXT.md §7)
+   Formulário de contato
    -------------------------------------------------------------------------- */
 
 .formulario { display: grid; gap: var(--esp-4); }
@@ -633,7 +632,7 @@ textarea.campo__controle { min-height: 140px; resize: vertical; }
 .campo__erro { font-size: var(--fs-xs); color: var(--cor-erro); }
 .campo--invalido .campo__erro { display: block; }
 
-/* em fundo escuro (padrão AgroPlan: form sobre verde) */
+/* em fundo escuro (form sobre verde) */
 .secao--escura .campo__label { color: var(--cor-branco); }
 .secao--escura .campo__erro { color: #ffd7d2; }
 
@@ -689,7 +688,7 @@ textarea.campo__controle { min-height: 140px; resize: vertical; }
 }
 
 /* --------------------------------------------------------------------------
-   Botão de WhatsApp flutuante (CONTEXT.md §8 — número pendente)
+   Botão de WhatsApp flutuante 
    -------------------------------------------------------------------------- */
 
 .whatsapp-flutuante {
@@ -711,7 +710,7 @@ textarea.campo__controle { min-height: 140px; resize: vertical; }
 .whatsapp-flutuante svg { width: 30px; height: 30px; }
 
 /* --------------------------------------------------------------------------
-   Mapa de MG (CONTEXT.md §6.6) — SVG inline gerado por ferramentas/gerar-mapa-mg.py
+   Mapa de MG — SVG inline gerado por ferramentas/gerar-mapa-mg.py
    a partir das malhas do IBGE; o pino de São João Evangelista já vem no SVG.
    -------------------------------------------------------------------------- */
 

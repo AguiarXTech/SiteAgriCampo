@@ -99,7 +99,7 @@ strong {
   padding-block: var(--secao-py);
 }
 
-/* Padrão de contraste alternado — recurso central da direção AgroPlan.
+/* Padrão de contraste alternado — recurso central do layout.
    As seções alternam fundo claro e fundo verde-escuro; os componentes
    (cards, botões) reagem via .em-fundo-escuro. */
 .secao--clara {

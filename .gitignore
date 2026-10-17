@@ -17,3 +17,6 @@ Thumbs.db
 .env.local
 
 mockup-cliente/
+
+# documentos internos (contexto, pesquisa, notas da cliente) — ficam só na máquina local
+estrutura/

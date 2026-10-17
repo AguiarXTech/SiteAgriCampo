@@ -1,32 +1,18 @@
 /**
- * servicos.js — serviços da Agricampo Jr. (CONTEXT.md §6.3)
+ * servicos.js — serviços e depoimentos da Agricampo Jr.
  *
- * CAMADA DE CONTEÚDO — fonte local, trocável. Formato espelha a collection
- * `services` do Payload/Mutare (nome, descricao, imagem, ordem).
+ * CAMADA DE CONTEÚDO — fonte local, usada quando não há conteúdo publicado
+ * pela plataforma Mutare. `ordem` segue os serviços mais procurados.
  *
- * imagem / imagemAlt: o card mostra a foto quando há `imagem` (fotos locais de
- * 14/10/2026 em assets/img/servicos/); sem imagem, fica o bloco cinza.
- *
- * Lista de nomes recebida em 16/09/2026; critério de organização e a
- * confirmação de que são os 3 mais buscados vieram no documento de
- * 14/10/2026 (mockup-cliente/referencia/) — "os mais procurados: análise
- * de solo, documentação (CAR e ITR) e Marketing Rural". `ordem` abaixo
- * segue esse ranking de procura. "Regulamentação de documentos" é
- * especificamente CAR e ITR, confirmado no mesmo documento.
- *
- * O documento de 14/10/2026 citava um "arquivo separado" com a descrição de
- * cada serviço, que não chegou junto. A cliente pediu (também 14/10/2026)
- * pra eu mesmo escrever essas descrições — são rascunho meu, curto e no
- * tom simples do resto do site, não texto oficial dela. Troca fácil
- * quando/se o arquivo original chegar. Ainda PENDENTE: o restante da lista
- * (só temos os 3 mais procurados, pode haver outros serviços menores).
+ * imagem / imagemAlt: o card mostra a foto quando há `imagem`; sem imagem,
+ * fica o bloco cinza.
  *
  * Quando a plataforma publica (branch `publicado`), a lista de serviços vem
  * de conteudo-mutare.js (ver mutare.js), na ordem do painel, e substitui
  * esta. Lá a imagem é URL absoluta ou null. Depoimentos continuam locais.
  */
 
-import { conteudo } from "./mutare.js?v=202610151544";
+import { conteudo } from "./mutare.js?v=202610172038";
 
 const servicosLocais = [
   {
@@ -56,21 +42,9 @@ const servicosLocais = [
     icone: "assets/img/servicos/marketing-rural.svg",
     ordem: 3,
   },
-  // PENDENTE — pode haver outros serviços além dos 3 mais procurados (confirmar com a cliente)
 ];
 
-/**
- * cases / depoimentos (CONTEXT.md §6.4).
- *
- * Primeiro depoimento real, 14/10/2026: a diretora de projetos (Heloisa)
- * fez follow-up por WhatsApp com um cliente atendido no ano anterior
- * (serviço de análise de solo, para implantação de milho para silagem) e
- * printou a resposta — captura em mockup-cliente/referencia/. Transcrito
- * aqui literalmente, só com o sobrenome do cliente omitido (não veio no
- * print). NÃO inventar depoimentos — se precisar de mais pra preencher a
- * página, o caminho é repetir esse mesmo follow-up de WhatsApp com outros
- * clientes atendidos, não fabricar texto.
- */
+/** Depoimentos de clientes atendidos — só depoimentos reais. */
 export const depoimentos = [
   {
     texto: "Deu diferença muito boa, deu média de 40 toneladas por hectare.",

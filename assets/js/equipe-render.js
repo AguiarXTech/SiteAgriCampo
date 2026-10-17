@@ -3,14 +3,14 @@
  *
  * A página /sobre/equipe.html traz só o contêiner:
  *   <div data-equipe></div>
- * e este módulo gera os setores (CONTEXT.md §6.2): cabeçalho do setor com a
+ * e este módulo gera os setores: cabeçalho do setor com a
  * cultura agrícola associada + grid de membros. Foto ausente vira placeholder
  * com as iniciais, nunca silhueta genérica.
  *
  * Dados viram texto, nunca HTML: só textContent/setAttribute, sem innerHTML.
  */
 
-import { equipePorSetor } from "../data/equipe.js?v=202610151544";
+import { equipePorSetor } from "../data/equipe.js?v=202610172038";
 
 function elemento(tag, classe, texto) {
   const el = document.createElement(tag);
@@ -71,11 +71,7 @@ export function renderizarEquipe() {
     cabecalho.appendChild(elemento("h3", "setor__nome", grupo.nome));
     if (grupo.culturaTema) {
       cabecalho.appendChild(
-        elemento(
-          "span",
-          "setor__cultura",
-          `${grupo.culturaTema}${grupo.sugestao ? " (a validar)" : ""}`,
-        ),
+        elemento("span", "setor__cultura", grupo.culturaTema),
       );
     }
 

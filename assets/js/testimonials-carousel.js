@@ -1,6 +1,6 @@
 /**
  * testimonials-carousel.js — carrossel de depoimentos, JS vanilla.
- * Sem biblioteca externa (CONTEXT.md §8): o projeto é HTML/CSS/JS puro.
+ * Sem biblioteca externa: o projeto é HTML/CSS/JS puro.
  *
  * Marcação esperada:
  *   <div class="carrossel" data-carrossel>
@@ -14,7 +14,7 @@
  *   </div>
  *
  * Só inicializa se houver slides — sem depoimentos reais, a seção nem existe
- * na página (CONTEXT.md §6.4).
+ * na página.
  */
 
 export function iniciarCarrosselDepoimentos() {

@@ -4,27 +4,11 @@
    Fonte única de verdade para cor, tipografia, espaçamento, raio e sombra.
    Nenhum outro arquivo deve cravar hex — todos consomem daqui.
 
-   Paleta TRAVADA em 16/09/2026, extraída pixel a pixel da logo real recebida
-   da cliente (mockup-cliente/referencia/Logo-colorida-agricampo.png) e do
-   post "Radar Agricampo" que a empresa júnior já publica (Elemento DSG.png):
-     - preto puro  #000000  (traço da logo, texto dos posts)
+   Paleta derivada da logo da Agricampo Jr.:
+     - preto puro  #000000  (traço da logo)
      - verde-sinal #00af02  (a outra cor da logo — saturação 100%, matiz 121°)
-   Isso SUBSTITUI a estimativa anterior (verde-escuro ao estilo AgroPlan-UFV,
-   §5 do CONTEXT.md) — a marca real da cliente manda mais que a referência de
-   benchmark. A ESTRUTURA aprovada por ela continua valendo (seções que
-   alternam fundo claro/escuro, cards que invertem cor, CAIXA ALTA, botão
-   pill).
-
-   ⚠️ AJUSTE em 18/09/2026: a primeira versão desta paleta usava PRETO puro
-   como fundo dominante das seções "escuras" — a cliente achou que ficou
-   "muita área preta" e pediu pra voltar o verde. --cor-primaria* volta a ser
-   verde, mas agora um verde DERIVADO DO MATIZ REAL da logo (121°), não mais
-   o verde-escuro estimado do AgroPlan — mesma lógica de antes (uma sombra
-   escura pro fundo, o verde-sinal puro reservado pro acento), com a cor
-   certa. --cor-acento (#00af02, o verde exato da logo) não mudou.
-
-   Direção tipográfica dos posts reais: título bem bold e arredondado
-   ("RADAR AGRICAMPO"), diferente do Poppins usado até aqui — ver §"Tipografia".
+   --cor-primaria* é um verde escuro derivado do mesmo matiz (121°), usado no
+   fundo das seções escuras; o verde-sinal puro fica reservado pro acento.
    ========================================================================== */
 
 :root {
@@ -81,12 +65,8 @@
   --cor-sucesso-fundo: #e7f4ec;
 
   /* --- Tipografia -----------------------------------------------------------
-   * A logo e os posts reais ("RADAR AGRICAMPO") usam um título bem bold e
-   * arredondado — mais chapado que o Poppins puro. Aproximação com Google
-   * Fonts: Baloo 2 (peso 800) para heading/display; Poppins segue para
-   * corpo/UI, que precisa ficar neutro e legível. ⚠️ é aproximação — a fonte
-   * exata do material da cliente não foi fornecida (provavelmente vetorizada
-   * à mão no Canva); pedir o arquivo de fonte se quiser 1:1.
+   * Títulos bem bold e arredondados, como os da identidade da empresa:
+   * Baloo 2 (peso 800) para heading/display; Poppins para corpo/UI.
    */
   --fonte-titulo: "Baloo 2", "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
   --fonte-corpo: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -112,7 +92,7 @@
   --leading-normal: 1.6;
 
   --tracking-caps: 0.02em;  /* Baloo 2 já é bem cheio; tracking menor que o Poppins usava */
-  --tracking-label: 0.12em; /* labels pequenos tipo "GESTÃO RURAL" (ref. Aegro) */
+  --tracking-label: 0.12em; /* labels pequenos em caixa alta */
 
   /* --- Espaçamento (escala base 4px) ------------------------------------- */
   --esp-1: 0.25rem;
@@ -138,7 +118,7 @@
   --raio-sm: 6px;
   --raio-md: 12px;
   --raio-lg: 20px;
-  --raio-pill: 999px;           /* botões pill — característica da ref. AgroPlan, mantida */
+  --raio-pill: 999px;           /* botões pill */
 
   /* --- Sombra (uso comedido) ----------------------------------------------- */
   --sombra-sm: 0 1px 2px rgba(0, 0, 0, 0.06);

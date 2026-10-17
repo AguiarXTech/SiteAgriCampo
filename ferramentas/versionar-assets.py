@@ -31,7 +31,7 @@ PADROES = {
 
 alterados = 0
 for arquivo in RAIZ.rglob("*"):
-    if arquivo.suffix not in PADROES or "mockup-cliente" in arquivo.parts or ".git" in arquivo.parts:
+    if arquivo.suffix not in PADROES or ".git" in arquivo.parts:
         continue
     texto = arquivo.read_text(encoding="utf-8")
     novo = PADROES[arquivo.suffix].sub(rf'\1?v={VERSAO}"', texto)

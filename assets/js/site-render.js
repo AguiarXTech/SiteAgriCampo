@@ -2,12 +2,11 @@
  * site-render.js — injeta dados de assets/data/site.js nos pontos marcados
  * do header/footer/páginas depois que os partials são montados.
  *
- * Hoje cobre só o essencial (WhatsApp e contato do rodapé). À medida que os
- * dados de CONTEXT.md §6.5 chegarem, ligar mais campos aqui em vez de editar
- * HTML em várias páginas.
+ * Cobre o WhatsApp flutuante e qualquer elemento marcado com [data-site].
+ * Novos campos se ligam aqui, em vez de editar HTML em várias páginas.
  */
 
-import { site } from "../data/site.js?v=202610151544";
+import { site } from "../data/site.js?v=202610172038";
 
 export function hidratarSite() {
   const { whatsapp, email, endereco } = site.contato;
