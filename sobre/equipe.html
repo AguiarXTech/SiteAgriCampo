@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <base href="../">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipe — Agricampo Jr.</title>
+  <meta name="description" content="A equipe da Agricampo Jr., organizada por setor: Presidência, Marketing, Comercial, Projetos, Administrativo-Financeiro e Recursos Humanos.">
+  <link rel="icon" type="image/png" href="assets/img/logo/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/img/logo/favicon-16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="assets/img/logo/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css?v=202610172038">
+  <script type="module" src="assets/js/main.js?v=202610172038"></script>
+</head>
+<body>
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div data-include="assets/partials/header.html"></div>
+
+  <main id="conteudo">
+    <section class="secao secao--clara">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <span class="rotulo-secao">Quem faz</span>
+          <h1 class="secao__titulo--caps">Nossa equipe</h1>
+          <p style="margin-top:1rem">
+            Nosso time é dividido em seis áreas, cada uma com uma cultura (plantação) que combina com ela.
+          </p>
+        </div>
+
+        <!-- foto de abertura -->
+        <img class="foto-destaque foto-destaque--abertura" src="assets/img/equipe/equipe-baloes.jpg"
+             alt="Membros da Agricampo Jr. sorrindo com a bandeira da empresa e balões verdes, vestindo a camisa da equipe"
+             width="960" height="720">
+
+        <!-- grid gerado por assets/js/equipe-render.js a partir de assets/data/equipe.js -->
+        <div data-equipe>
+          <p class="membro__cargo">Carregando equipe… (requer servidor HTTP local)</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="assets/partials/footer.html"></div>
+</body>
+</html>

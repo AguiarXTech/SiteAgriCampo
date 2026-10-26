@@ -1,0 +1,22 @@
+# dependências (o site não tem build, mas ferramentas locais podem criar)
+node_modules/
+
+# artefatos de servidores de preview
+.cache/
+.parcel-cache/
+dist/
+
+# SO / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ambiente
+.env
+.env.local
+
+mockup-cliente/
+
+# documentos internos (contexto, pesquisa, notas da cliente) — ficam só na máquina local
+estrutura/
